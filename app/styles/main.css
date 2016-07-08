@@ -24,16 +24,16 @@ body {
 
 /* Custom page header */
 .header {
-  background: #D4BFDD;
+  background: #fff;/*#D4BFDD;*/
   border-bottom: 1px solid #e5e5e5;
+  height: 100px;
 }
 .center-block{
   text-align: center;
-
-  margin-top: -20px;
 }
 .menuInicial{
-  height: 50px;
+height: auto;
+width: auto;
   text-align: center;
 }
 .myfooter{
