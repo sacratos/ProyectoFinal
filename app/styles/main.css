@@ -1,116 +1,270 @@
+/*http://paletton.com/#uid=55a0f0kd+oT36va7KqBmbnvtkks*/
+
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
+
 
 /* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-    background: #fff;/*#8C82C8;*/
 
+body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background: url("../images/fondo-inicio.png");
+    /*#8C82C8;*/
 }
 
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
+
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
-  padding-right: 15px;
-  background: #D4BFDD;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: #D4BFDD;
 }
+
+
+/* INPUTS */
+
+.style-4 input {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #c9c9c9;
+    transition: border 0.8s;
+}
+
+.style-4 input:focus,
+.style-4 input.focus {
+    border-bottom: solid 3px red;
+}
+
+input[type="submit"] {
+    margin-left: 200px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    margin-top: 10px;
+}
+
 
 /* Custom page header */
+
 .header {
-  background: #fff;/*#D4BFDD;*/
-  border-bottom: 1px solid #e5e5e5;
-  height: 100px;
+    background: #fff;
+    /*#D4BFDD;*/
+    height: auto;
 }
-.center-block{
-  text-align: center;
+.menos-margin{
+    margin-top: -20px;
 }
-.menuInicial{
-height: auto;
-width: auto;
-  text-align: center;
+.center-block {
+    text-align: center;
 }
-.myfooter{
-  color: #201850;
+
+.menuInicial {
+    text-align: center;
+    margin-left: 50px;
 }
+
+.menuInicial:hover {
+    background: black;
+    transition: 1s;
+}
+
+.navbar {
+    font-family: 'Lobster', cursive;
+    background: #C7B4BF;
+}
+
+.important {
+    color: red;
+    font-weight: bold;
+}
+
 
 /* Make the masthead heading the same height as the navigation */
+
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
 }
-.text-muted{
-  color: #201850;
-  font-family: 'Lobster', cursive;
+
+.text-muted {
+    color: #920C35;
+    font-family: 'Lobster', cursive;
+    margin-top: 20px;
 }
-.logo{
-  margin: 0px 0px 10px 10px;
+
+.letra {
+    font-family: 'Fugaz One', cursive;
 }
+
+.logo {
+    margin: 0px 0px -15px 0px;
+}
+
+
 /* Custom page footer */
-.thumbnail{
-  margin-top: 20px;
+
+.thumbnail {
+    margin-left: auto;
+    margin-top: 20px;
+    background: none;
+    color: white;
 }
+
+.thumbnail:hover {
+    background: #9F5A81;
+    color: #C7B4BF;
+}
+
+
+/*FOOTER*/
+
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+    padding-top: 19px;
+    color: #A192A1;
+    border-top: 10px solid #6A096A;
+    text-align: center;
+    background-color: #814981;
 }
+
+#text-3 {
+    margin-top: -50px;
+}
+
+.phonefooter {
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.phonefooter:hover {
+    background: #fff;
+    color: #DB0171 !important;
+    text-shadow: 0 0 4px #DB0171;
+}
+
+.textwidget {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-size: 100%;
+}
+
+
+/*INDEX3-*/
+
+
+/*
+footer#footer {
+    padding: 20px 0px;
+    height: auto;
+    border-top: 1px solid #E0E0E0;
+    box-shadow: 0px -1px 7px #AAA;
+    background: #3E464C;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.footerSeparator {
+    display: inline;
+    float: left;
+}
+
+.footerColumn {
+    display: inline;
+    float: left;
+    overflow: auto;
+}
+
+.footerContent {
+    display: inline;
+    float: left;
+    overflow: hidden;
+    margin-right: 0;
+}
+
+.footerTitle {
+    font-size: 14px;
+}
+
+.myfooter {
+    color: #201850;
+}
+*/
 
 .container-narrow > hr {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
+
 /* Main marketing message and sign up button */
+
 .jumbotron {
-  text-align: center;
-  border-bottom: 3px solid #0F083B;
-  border-top: 1px solid #0F083B;
-  background: #5C5393;
+    text-align: center;
+    border-bottom: 3px solid #0F083B;
+    border-top: 1px solid #0F083B;
+    background: #5C5393;
 }
 
 .jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
+    font-size: 21px;
+    padding: 14px 24px;
 }
 
+
 /* Supporting marketing content */
+
 .marketing {
-  margin: 40px 0;
+    margin: 40px 0;
 }
 
 .marketing p + h4 {
-  margin-top: 28px;
+    margin-top: 28px;
 }
 
+
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 1200px;
-  }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+@media screen and (min-width: 430px) {
+    .container {
+        max-width: 1200px;
+    }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 40px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+    .error {
+        width: auto;
+        color: white;
+        font-family: arial;
+        opacity: 0.8;
+        font-size: small;
+    }
+    label {
+        display: inline-block;
+        width: 200px;
+        text-align: right
+    }
 }

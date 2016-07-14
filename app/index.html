@@ -1,447 +1,166 @@
-<!DOCTYPE html>
-<html xmlns:og="http://ogp.me/ns" lang="es" xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<!doctype html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <script src="//code.jquery.com/jquery.latest.js"></script>
-    <title>Fórmulas para la adecuacion de una sala - enlaonda.com</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://www.enlaonda.com/images/logo.png" />
-    <meta property="og:title" content="Series y pelis en streaming y descarga directa" />
-    <meta property="og:url" content="http://www.enlaonda.com/" />
-    <link rel="shortcut icon" href="/favicon.ico">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link href='https://fonts.googleapis.com/css?family=Fugaz+One:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-
-
-
-
-
-    <!--
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <script>
-    /*<![CDATA[*/
-    BASEURL = "";
-    DEVELOPMENT = false;
-    SESS = "jafi934hm7ig02nsllh339dbb2";
-    /*]]>*/
-    </script>
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon-iphone.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-ipad.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-iphone4.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-ipad3.png" />
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="http://www.pordede.com/content/files/all-0x168822.css" />
-    <script type="text/javascript" src="http://www.enlaonda.com/content/files/all-0x168822.js"></script>
-    <title>Fórmulas para la adecuacion de una sala - enlaonda.com</title>
-    <meta name="description" content="" />
-    <link href='https://fonts.googleapis.com/css?family=Fugaz+One:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://www.enlaonda.com/images/logo.png" />
-    <meta property="og:title" content="Series y pelis en streaming y descarga directa" />
-    <meta property="og:url" content="http://www.enlaonda.com/" />
-    <meta property="fb:app_id" content="494757303936272" />
-    <meta property="og:description" content="" />
-    <meta property="og:locale" content="es_ES" />
-    <meta property="og:site_name" content="www.enlaonda.com" />
-    <meta property="fb:admins" content="1244326175" />
-    <meta name="keywords" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="viewport" content="height=device-height, initial-scale=1, maximum-scale=1" />
-    <!-- Publi Playspace -->
-    <script type="text/javascript">
-    /*Publi Playspace*/
-    (function openPlayspace($) {
-        $.fn.extend({
-            leanModal: function(options) {
-                var defaults = {
-                    top: 100,
-                    overlay: 0.5,
-                    closeButton: null
-                };
-                var overlay = $("<div id='lean_overlay'></div>");
-                $("body").append(overlay);
-                options = $.extend(defaults, options);
-                return this.each(function() {
-                    var o = options;
-                    $(this).click(function(e) {
-                        var modal_id = $(this).attr("href");
-                        $("#lean_overlay").click(function() {
-                            close_modal(modal_id)
-                        });
-                        $(o.closeButton).click(function() {
-                            close_modal(modal_id)
-                        });
-                        var modal_height = $(modal_id).outerHeight();
-                        var modal_width = $(modal_id).outerWidth();
-                        $("#lean_overlay").css({
-                            "display": "block",
-                            opacity: 0
-                        });
-                        $("#lean_overlay").fadeTo(200, o.overlay);
-                        $(modal_id).css({
-                            "display": "block",
-                            "position": "fixed",
-                            "opacity": 0,
-                            "z-index": 11000,
-                            "left": 50 + "%",
-                            "margin-left": -(modal_width / 2) + "px",
-                            "top": o.top + "px"
-                        });
-                        $(modal_id).fadeTo(200, 1);
-                        e.preventDefault()
-                    })
-                });
-
-                function close_modal(modal_id) {
-                    $("#lean_overlay").fadeOut(200);
-                    $(modal_id).css({
-                        "display": "none"
-                    })
-                }
-            }
-        })
-    })(jQuery);
-    </script>
-    <style type="text/css">
-    #lean_overlay {
-        position: fixed;
-        z-index: 9999;
-        top: 0px;
-        left: 0px;
-        height: 100%;
-        width: 100%;
-        background: #000;
-        display: none;
-    }
-    
-    #play_content {
-        max-width: 706px;
-        height: auto;
-        padding: 0px;
-        display: none;
-        border-radius: 5px;
-        -moz-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        z-index: 200;
-        text-align: center;
-    }
-    
-    #play_content a img {
-        max-width: 100%;
-        height: auto;
-        width: auto\9;
-        /* ie8 */
-    }
-    
-    #play_close {
-        border-radius: 15px;
-        -moz-border-radius: 15px;
-        -webkit-border-radius: 15px;
-        border: 0px;
-        background: #FFF;
-        color: #444;
-        margin-top: 10px;
-        font-size: 10px;
-    }
-    
-    #trigger_id {
-        display: none;
-    }
-    </style>
-    <!-- Fin publi Playspace -->
+    <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
+    <title>S+und M+viment</title>
+    <!--Los scripts se cargan siempre después de los css, nunca antes!-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery.complexify.js/jquery.complexify.js"></script>
 </head>
 
-<body id="bodyId">
-    <script type="text/javascript">
-    /*<![CDATA[*/
-    var LANG = [];
-    TRANS = function(label, def, params) {
-        if (params == undefined) {
-            params = [];
-        }
-        if (LANG[label] != undefined) {
-            var translation = LANG[label];
-        } else {
-            var translation = def;
-            console.log("'" + label + "' => '" + def + "',");
-        }
-        var i = 0;
-        for (; i < params.length; i++) {
-            translation = translation.replace("***", params[i]);
-        }
-        return translation;
-    };
-
-
-    /*]]>*/
-    </script>
-    <script type="text/javascript">
-    function crearCookie(name, value, days) {
-        //debugger
-        var expires;
-
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toGMTString();
-        } else {
-            expires = "";
-        }
-        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
-    }
-    </script>
-    <!-- Fin publi Playspace -->
-    <style>
-    #notifid button {
-        font-size: 15px;
-        cursor: pointer;
-    }
-    .logo{
-        font-family: 'Fuzz+One';
-    }
-    </style>
-    <script type="text/javascript">
-    function createCookie(name, value, days) {
-        //debugger
-        var expires;
-
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toGMTString();
-        } else {
-            expires = "";
-        }
-        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
-    }
-    </script>
-    <script>
-    LOGGEDIN = false;
-
-    USERNAME = "";
-    AVATAR = "";
-    HOSTS = Long.fromString("0", true);
-    </script>
-    <div id="stickyfooterWrapper" class="green">
-        <div id="loaderContainerCommon" class="loaderContainer">
-            <div id="loaderOverlay"></div>
-            <div id="circleBig">
-                <div id="circleBig_1" class="circleBig">
-                </div>
-                <div id="circleBig_2" class="circleBig">
-                </div>
-                <div id="circleBig_3" class="circleBig">
-                </div>
-            </div>
+<body>
+    <div class="container">
+        <img class="center-block menos-margin" src="../images/logo2.png">
+    </div>
+    
+    <div class="container">
+        <div class="col-lg-1">
         </div>
-        <section id="page" class="gridcontainer">
-            <div id="mainholder">
-                <div id="screen-1088366675" class="clearfix screen">
-                    <div id="layout5" class="presentation">
-                        <div id="loggedout">
-                            <div class="one clearfix">
-                                <div class="logo">
-                                    <p class="font-effect-3d-float">enlaonda.com</p>
-                                </div>
-                                <div class="forms">
-                                    <div class="form">
-                                        <div class="caja-modal">
-                                            <form accept-charset="UTF-8" class="fancy-form popupanswer register-form" id="register-form1454774209" action="/php/nuevoRegistro.php" method="post">
-                                                <h1>Registro</h1>
-                                                <div class="col-sm-12">
-                                                    <label class="control-label col-sm-4" for="nombre">Nombre<span>*</span></label>
-                                                    <div class="col-sm-8">
-                                                        <input id="nombre" name="nombre" placeholder="Introduce tu nombre" class="form-control input-md" type="text">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input APELLIDOS-->
-                                                <div class="col-sm-12">
-                                                    <label class="control-label col-sm-4" for="apellidos">Apellidos<span>*</span></label>
-                                                    <div class="col-sm-8">
-                                                        <input id="apellidos" name="apellidos" placeholder="Introduce tus apellidos" class="form-control input-md" type="text">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input EMAIL-->
-                                                <div class="col-sm-12">
-                                                    <label class="control-label col-sm-4" for="email">Email<span>*</span></label>
-                                                    <div class="col-sm-8">
-                                                        <input id="email" name="email" placeholder="Introduce tu email" class="form-control input-md" type="text">
-                                                    </div>
-                                                </div>
-                                                <!-- Text input REPETIR EMAIL-->
-                                                <div class="col-sm-12">
-                                                    <label class="control-label col-sm-4" for="repemail">Repetir Email<span>*</span></label>
-                                                    <div class="col-sm-8">
-                                                        <input id="repemail" name="repemail" placeholder="Repite tu email" class="form-control input-md" type="text">
-                                                    </div>
-                                                </div>
-                                                <!-- Password input CONTRASEÑA-->
-                                                <div class="col-sm-12">
-                                                    <label class="control-label col-sm-4" for="contrasena">Contraseña<span>*</span></label>
-                                                    <div class="col-sm-8">
-                                                        <input id="contrasena" name="contrasena" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
-                                                        <meter value="0" id="complejidad" low="20" high="40" max="100" min="0"></meter>
-                                                        <label id="labelComplejidad"></label>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="fromHome" value="1" />
-                                                <button class="button nopopup">Registrarme</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- form -->
-                                    <div class="form">
-                                        <div class="caja-modal">
-                                            <!--<form class="fancy-form" method="POST" action="/manage/login">-->
-                                            <form class="fancy-form popupanswer" id="login-form" action="/site/login" method="post">
-                                                <h1>Entrar</h1>
-                                                <label for="LoginForm_username" class="required">Nombre de usuario <span class="required">*</span></label>
-                                                <div class="inputtext-fancy">
-                                                    <input name="LoginForm[username]" id="LoginForm_username" type="text" /> </div>
-                                                <label for="LoginForm_password" class="required">Contraseña <span class="required">*</span></label>
-                                                <div class="inputtext-fancy">
-                                                    <input name="LoginForm[password]" id="LoginForm_password" type="password" /> </div>
-                                                <button class="button nopopup">Entrar</button>
-                                                <a href="/site/forgot" class="defaultPopup noinhome forgotLink">He olvidado la contraseña</a>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <br>
-                                    <!-- form -->
-                                </div>
-                            </div>
+        <div class="col-lg-4 col-sm-10 col-md-10 thumbnail">
+            <div class="caja-modal">
+                <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formularioEntrada" action="php/comprobarIdentidad.php" method="post" novalidate>
+                    <h1 class="text-muted center-block">Entrar</h1>
+                    <div id="ok"></div>
+                    <!-- Text input EMAIL-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="emailEntrar">Email<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="emailEntrar" name="emailEntrar" placeholder="Introduce tu email" class="form-control input-md" type="text">
                         </div>
                     </div>
-                    <style>
-                    body #subheader {
-                        display: none;
-                    }
-                    
-                    body .gridcontainer {
-                        max-width: 99999px;
-                        width: 100%;
-                    }
-                    
-                    body #header .logoContainer {
-                        display: none;
-                    }
-                    </style>
-                </div>
-            </div>
-            <div id="ajaxload" class="ajaxload" style="display:none;"></div>
-            <div class="queue">
-                <div id="fileQueue"></div>
-            </div>
-        </section>
-        <!-- page -->
-    </div>
-    <footer id="footer">
-        <div id="footerContainer" class="gridcontainer">
-            <div id="footerContent">
-                <div class="footerSeparator">&nbsp;</div>
-                <div class="footerColumn">
-                    <div class="footerTitle">Contacto / Social</div>
-                    <ul>
-                        <li id="contactoLink"><a class="defaultPopup" href="/site/contact"><i class="icon-envelope"></i>Contacto</a></li>
-                        <li><a target="_blank" href="https://twitter.com/enlaonda"><i class="icon-twitter"></i>En Twitter</a></li>
-                        <li><a target="_blank" href="https://www.facebook.com/enlaonda"><i class="icon-facebook"></i>En Facebook</a></li>
-                        <li><a target="_blank" href="https://play.google.com/store/apps/details?id=com.panuco.enlaonda&hl=es"><i class="icon-android"></i>App EnlaOnda (beta)</a></li>
-                    </ul>
-                </div>
-                <div class="footerColumn">
-                    <div class="footerTitle">Nosotros</div>
-                    <ul>
-                        <li><a target="_blank" href="http://blog.enlaonda.com">Nuestro blog</a></li>
-                        <li><a class="defaultLink" href="/site/principios">Nuestros principios</a></li>
-                        <li><a class="foroLink" href="http://www.pordescargadirecta.com">Foro (pordescargadirecta)</li></a>
-                            <li><a target="_blank" href="http://www.pornoporfavor.com">Videos porno (pornoporfavor)</a></li>
-                    </ul>
-                </div>
-                <script type="text/javascript" src="/myjs/ads.js?prvtof="></script>
-                <!-- test if adblock -->
+                    <!-- Password input CONTRASEÑA-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="contrasenaEntrar">Contraseña<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="contrasenaEntrar" name="contrasenaEntrar" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <input type="hidden" name="fromHome" value="1" />
+                        <br>
+                        <button name="entrar" type="submit" class="btn-lg btn-success center-block">Entrar</button>
+                    </div>
+                </form>
             </div>
         </div>
-    </footer>
-    <div id="up" onclick="controller.up();">
+        <div class="col-lg-1">
+            
+        </div>
+        <div class="thumbnail col-lg-5 col-md-10 col-sm-10">
+            <div class="caja-modal">
+                <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formulario" method="post">
+                    <h1 class="text-muted center-block">Registro</h1>
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="nombre">Nombre<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="nombre" name="nombre" placeholder="Introduce tu nombre" class="form-control input-md" type="text">
+                        </div>
+                    </div>
+                    <!-- Text input APELLIDOS-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="apellidos">Apellidos<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="apellidos" name="apellidos" placeholder="Introduce tus apellidos" class="form-control input-md" type="text">
+                        </div>
+                    </div>
+                    <!-- Text input EMAIL-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="email">Email<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="email" name="email" placeholder="Introduce tu email" class="form-control input-md" type="text">
+                        </div>
+                    </div>
+                    <!-- Text input REPETIR EMAIL-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="repemail">Repetir Email<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="repemail" name="repemail" placeholder="Repite tu email" class="form-control input-md" type="text">
+                        </div>
+                    </div>
+                    <!-- Password input CONTRASEÑA-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="contrasena">Contraseña<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="contrasena" name="contrasena" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
+                            <meter value="0" id="complejidad" low="20" high="40" max="100" min="0"></meter>
+                            <label id="labelComplejidad"></label>
+                        </div>
+                    </div>
+                    <div class="clearfix">
+                        <input type="hidden" name="fromHome" value="1" />
+                        <button name="registrar" type="submit" class="btn-lg btn-success center-block">Registrarme</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-1">
+        </div>
     </div>
-</body>
-<!-- Start of Analytics-->
-<script type="text/javascript">
-window.google_analytics_uacct = "UA-3505389-13";
+    <div class="footer">
+        <section></section>
+        <section role="contentinfo" itemscope="itemscope">
+            <div>
+                <div>
+                    <div>
+                        <section id="text-4">
+                            <div class="textwidget">
+                                <div style="line-height: 5px;">
+                                    <small>
+                                        <span style="color:rgba(256,256,256,0.7);">
+                                    Un diseño de <strong>Mr Probl3ms</strong>
+                                        </span>
+                                    </small>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="text-1" class="widget widget_text">
+                            <br>
+                            <div class="textwidget"><img src="../images/coolman.png"></div>
+                        </section>
+                    </div>
+                    <div class="mk-col-1-3">
+                        <section id="text-3">
+                            <div>Otros sitios</div>
+                            <br>
+                            <div class="textwidget">
+                                <div>
+                                    <a href="#"><img name="sprite" src="../icons/facebook.png"></a>
+                                    <a style href="#"><img name="sprite" src="../icons/linkedin.png"></a>
+                                    <a href="#"><img name="sprite" src="../icons/twitter.png"></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="mk-col-1-3">
+                        <section id="text-5">
+                            <div class="textwidget"><a class="phonefooter" href="#">900 230 198<br><span>¡Teléfono gratuito!</a></div>
+                        </section>
+                        
+                    </div>
 
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-3505389-13']);
-_gaq.push(['_setDomainName', '.www.enlaonda.com']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(ga, s);
-})();
-</script>
-<!-- End of Analytics-->
-<script type="text/javascript">
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-}
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1);
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
-
-jQuery(window).ready(function() {
-    if (!getCookie('adb')) {
-        if (!window.noadblock) {
-            setCookie('adb', true, 7);
-        } else {
-            setCookie('adb', false, 7);
-        }
-        if (navigator.cookieEnabled === true) {
-            location.reload();
-        }
-    }
-});
-</script>
-<script type="text/javascript">
-/*<![CDATA[*/
-$(document).ready(function() {
-
-    controller = new ControllerClass();
-    controller.init();
-
-});
-/*]]>*/
-</script>
+                </div>
+            </div>
+        </section>
+    </div>
+    </div>
+    <div class="bottom-corner-btns js-bottom-corner-btns">
+        <a href="#top-of-page" class="mk-go-top  js-smooth-scroll js-bottom-corner-btn js-bottom-corner-btn--back">
+            <i class="mk-icon-chevron-up"></i>
+        </a>
+    </div>
+    <footer id="mk_page_footer">
+    </footer>
+    </div>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
+<!-- Observaciones: 
+     Por defecto los errores en los formularios se inyectan dentro del código html mediante un contenedor label con class="error", justo a continuación del input que dispara el error.
+     Obsérvalo mediante chrome developer tools o firebug.
+-->
