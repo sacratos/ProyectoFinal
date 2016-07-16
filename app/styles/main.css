@@ -2,7 +2,7 @@
 
 .browsehappy {
     margin: 0.2em 0;
-    background: #ccc;
+    border-top: 10px solid #ccc;
     color: #000;
     padding: 0.2em 0;
 }
@@ -53,6 +53,14 @@ input[type="password"] {
     margin-top: 10px;
 }
 
+meter {
+    height: 20px;
+    margin-top: 10px;
+    width: 70%;
+    border: 1px solid black;
+    box-shadow: 3px 3px 30px 3px black;
+}
+
 
 /* Custom page header */
 
@@ -61,9 +69,11 @@ input[type="password"] {
     /*#D4BFDD;*/
     height: auto;
 }
-.menos-margin{
+
+.menos-margin {
     margin-top: -20px;
 }
+
 .center-block {
     text-align: center;
 }
@@ -79,8 +89,12 @@ input[type="password"] {
 }
 
 .navbar {
+    height: 40px;
     font-family: 'Lobster', cursive;
     background: #C7B4BF;
+}
+.navbar-brand{
+    margin-top: 15px;
 }
 
 .important {
@@ -112,6 +126,30 @@ input[type="password"] {
     margin: 0px 0px -15px 0px;
 }
 
+.cara1 {
+    position: absolute;
+    margin: -110px 60px 100px 390px;
+    z-index: 1;
+}
+
+.hand1 {
+    position: absolute;
+    margin: -140px -40px 0;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.wave2 {
+    position: absolute;
+    margin: -125px -5px 0;
+}
+
+.wave3 {
+    position: absolute;
+    margin: -140px -5px 0;
+    z-index: 0;
+}
+
 
 /* Custom page footer */
 
@@ -124,7 +162,7 @@ input[type="password"] {
 
 .thumbnail:hover {
     background: #9F5A81;
-    color: #C7B4BF;
+    color: black;
 }
 
 
@@ -159,6 +197,10 @@ input[type="password"] {
     border: 0;
     vertical-align: baseline;
     font-size: 100%;
+}
+
+.imagen1{
+    margin: 20px 0px 10px 20px;
 }
 
 
@@ -232,6 +274,9 @@ footer#footer {
 .marketing p + h4 {
     margin-top: 28px;
 }
+.parrafoImagen{
+    
+}
 
 
 /* Responsive: Portrait tablets and up */
@@ -267,4 +312,17 @@ footer#footer {
         width: 200px;
         text-align: right
     }
+
+    /*.cara1 {
+        display: none;
+    }
+    .hand1 {
+        display: none;
+    }
+    .wave2 {
+        display: none;
+    }
+    .wave3 {
+        display: none;
+    }*/
 }

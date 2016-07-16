@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
     <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
@@ -17,14 +18,13 @@
     <div class="container">
         <img class="center-block menos-margin" src="../images/logo2.png">
     </div>
-    
     <div class="container">
         <div class="col-lg-1">
         </div>
         <div class="col-lg-4 col-sm-10 col-md-10 thumbnail">
             <div class="caja-modal">
                 <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formularioEntrada" action="php/comprobarIdentidad.php" method="post" novalidate>
-                    <h1 class="text-muted center-block">Entrar</h1>
+                    <h1 class="text-muted center-block">Entrar</h1><img class="hand1" src="../images/hand-ok.png"><img class="wave2" src="../images/wave2.png">
                     <div id="ok"></div>
                     <!-- Text input EMAIL-->
                     <div class="col-sm-12">
@@ -49,12 +49,11 @@
             </div>
         </div>
         <div class="col-lg-1">
-            
         </div>
         <div class="thumbnail col-lg-5 col-md-10 col-sm-10">
             <div class="caja-modal">
                 <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formulario" method="post">
-                    <h1 class="text-muted center-block">Registro</h1>
+                    <h1 class="text-muted center-block">Registrate! <small class="text-muted"> It's free</small></h1><img class="cara1" src="../images/cara1.png"><img class="wave3" src="../images/wave3.png">
                     <div class="col-sm-12">
                         <label class="control-label col-sm-4" for="nombre">Nombre<span>*</span></label>
                         <div class="col-sm-8">
@@ -88,6 +87,8 @@
                         <div class="col-sm-8">
                             <input id="contrasena" name="contrasena" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
                             <meter value="0" id="complejidad" low="20" high="40" max="100" min="0"></meter>
+                            <br>
+                            <br>
                             <label id="labelComplejidad"></label>
                         </div>
                     </div>
@@ -100,6 +101,48 @@
         </div>
         <div class="col-lg-1">
         </div>
+    </div>
+    <div class="thumbnail">
+        <div class="container-fluid">
+            <h1 class="letra center-block">¿Quienes somos?</h1>
+            <p class="center-block">Somos un grupo de aficionados dedicados al <strong>mundo del sonido</strong>. Esta página ha sido creada para <strong>facilitar</strong> la obtencion de diferentes parametros que te ayudarán a comprender de una manera óptima el estado acústico de la sala o salas que tengas como objetivo trabajar.</p>
+            <div class="browsehappy">
+                <div class="row">
+                    <div class="col-lg-1 col-sm-1 col-md-1 col-xs-4">
+                        <img class="imagen1 img-responsive img-circle" src="../images/TR1.jpg" alt="TR" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-8">
+                        <blockquote cite="https://es.wikipedia.org/wiki/Tiempo_de_reverberaci%C3%B3n">
+                            <h4>Tiempo de Reverberación:</h4>
+                            <footer style="color:white">Calculamos el <em>tiempo</em> que tarda tu sala en <em>atenuar</em> un sonido incidente.</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-sm-1 col-md-1 col-xs-4">
+                        <img class="imagen1 img-responsive img-circle" src="../images/TR1.jpg" alt="TR" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-8">
+                        <blockquote cite="https://es.wikipedia.org/wiki/Tiempo_de_reverberaci%C3%B3n">
+                            <h4>Tiempo de Reverberación:</h4>
+                            <footer style="color:white">Calculamos el <em>tiempo</em> que tarda tu sala en <em>atenuar</em> un sonido incidente.</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-1 col-sm-1 col-md-1 col-xs-4">
+                        <img class="imagen1 img-responsive img-circle" src="../images/TR1.jpg" alt="TR" />
+                    </div>
+                    <div class="col-lg-3 col-sm-3 col-md-3 col-xs-8">
+                        <blockquote cite="https://es.wikipedia.org/wiki/Tiempo_de_reverberaci%C3%B3n">
+                            <h4>Tiempo de Reverberación:</h4>
+                            <footer style="color:white">Calculamos el <em>tiempo</em> que tarda tu sala en <em>atenuar</em> un sonido incidente.</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <div class="footer">
         <section></section>
@@ -140,9 +183,7 @@
                         <section id="text-5">
                             <div class="textwidget"><a class="phonefooter" href="#">900 230 198<br><span>¡Teléfono gratuito!</a></div>
                         </section>
-                        
                     </div>
-
                 </div>
             </div>
         </section>
