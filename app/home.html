@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <div class="header">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
@@ -34,55 +33,50 @@
                 </div>
             </div>
         </nav>
-        <h2 class="sub-header">Detalles de la Sala:</h2>
-                <div class="form-responsive">
-                    <form id="form1" action="dashboard_submit" method="get" accept-charset="utf-8">
-                      <div class="container-narrow">
-                      <div class="form-control">
-                        <input type="number" name="largo" placeholder="Largo"> metros
-                        </div>
-                        <div class="form-control">
-                        <input type="number" name="largo" placeholder="Largo"> metros
-                        </div>
-                        <div class="form-control">
-                        <input type="number" name="largo" placeholder="Largo"> metros
-                      </div>
-                        
-                      </div>
-                      <button type="submit">Guardar Datos</button>
-                    </form>
-                </div>
     </div>
     <div class="browsehappy">
-              <H1>Browsehappy</H1>  
+        <div class="container">
+            <div class="row">
+                <div class="thumbnail">
+                    <h2 class="sub-header">Detalles de la Sala:</h2>
+                    <div class="form-responsive">
+                        <form id="form1" method="get" accept-charset="utf-8" novalidate>
+                            <div class="container">
+                                <h5>Largo: </h5><input style="width: 80px; height: 25px" type="number" name="largo" id="largo" placeholder="Largo"> metros
+                                <h5>Ancho: </h5><input style="width: 80px; height: 25px" type="number" name="ancho" id="ancho" placeholder="Ancho"> metros
+                                <h5>Alto: </h5><input style="width: 80px; height: 25px" type="number" name="alto" id="alto" placeholder="Alto"> metros
+                            </div>
+                            <br>
+                            <button type="submit">Guardar Datos</button>
+                        </form>
+                    </div>
                 </div>
-    <div class="row">
-            
-            <div class="jumbotron">
-                <h2>miJumbotron</h2>
-                
             </div>
         </div>
-    <div class="container-fluid">
-        Primer container
         <div class="row">
-            Primer row
+            <div class="jumbotron">
+                <h2>miJumbotron</h2>
+            </div>
         </div>
-        <div class="row">
-            Segundo row
+        <div class="container-fluid">
+            Primer container
+            <div class="row">
+                Primer row
+            </div>
+            <div class="row">
+                Segundo row
+            </div>
+            <div class="row">
+                Tercer row
+            </div>
+            <div class="row">
+                Cuarto row
+            </div>
         </div>
-        <div class="row">
-            Tercer row
-        </div>
-        <div class="row">
-            Cuarto row
-        </div>
-    
-    </div>
-    <footer class="footer">
-        Aqui mi footer
-    </footer>
-    <script src="scripts/dashboard.js"></script>
+        <footer class="footer">
+            Aqui mi footer
+        </footer>
+        <script src="scripts/dashboard.js"></script>
 </body>
 
 </html>

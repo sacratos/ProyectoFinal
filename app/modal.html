@@ -23,33 +23,36 @@
         <div class="col-lg-1">
         </div>
         <div class="col-lg-4 col-sm-10 col-md-10 thumbnail">
-            <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formularioEntrada" action="php/comprobarIdentidad.php" method="post" novalidate>
-                <h1 class="text-muted center-block">Entrar</h1><img class="hand1" src="../images/hand-ok.png"><img class="wave2" src="../images/wave2.png">
-                <div id="ok"></div>
-                <!-- Text input EMAIL-->
-                <div class="col-sm-12">
-                    <label class="control-label col-sm-4" for="emailEntrar">Email<span>*</span></label>
-                    <div class="col-sm-8">
-                        <input id="emailEntrar" name="emailEntrar" placeholder="Introduce tu email" class="form-control input-md" type="text">
+            
+                <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formularioEntrada" action="php/comprobarIdentidad.php" method="post" novalidate>
+                    <h1 class="text-muted center-block">Entrar</h1><img class="hand1" src="../images/hand-ok.png"><img class="wave2" src="../images/wave2.png">
+                    <div id="ok"></div>
+                    <!-- Text input EMAIL-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="emailEntrar">Email<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="emailEntrar" name="emailEntrar" placeholder="Introduce tu email" class="form-control input-md" type="text">
+                        </div>
                     </div>
-                </div>
-                <!-- Password input CONTRASEÑA-->
-                <div class="col-sm-12">
-                    <label class="control-label col-sm-4" for="contrasenaEntrar">Contraseña<span>*</span></label>
-                    <div class="col-sm-8">
-                        <input id="contrasenaEntrar" name="contrasenaEntrar" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
+                    <!-- Password input CONTRASEÑA-->
+                    <div class="col-sm-12">
+                        <label class="control-label col-sm-4" for="contrasenaEntrar">Contraseña<span>*</span></label>
+                        <div class="col-sm-8">
+                            <input id="contrasenaEntrar" name="contrasenaEntrar" placeholder="Introduce tu contraseña" class="form-control input-md" type="password">
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <br>
-                    <a id="olvidado" href="#" data-target="#pwdModal" data-toggle="modal">He olvidado mi contraseña</a>
-                </div>
-                <div class="clearfix">
-                    <input type="hidden" name="fromHome" value="1" />
-                    <br>
-                    <button name="entrar" type="submit" class="btn-lg btn-success center-block">Entrar</button>
-                </div>
-            </form>
+                    <div class="col-sm-12">
+                        <br>
+                        <span class="center-block control-label"><a href="#" data-target="#pwdModal" data-toggle="modal">He olvidado mi contraseña</a></span>
+                    </div>
+                    <div class="clearfix">
+                        <input type="hidden" name="fromHome" value="1" />
+                        <br>
+                        <button name="entrar" type="submit" class="btn-lg btn-success center-block">Entrar</button>
+                    </div>
+                    
+                </form>
+            
         </div>
         <div class="col-lg-1">
         </div>
@@ -106,7 +109,7 @@
         </div>
     </div>
     <!--modal-->
-    <div id="pwdModal" class="modal" role="dialog">
+    <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -118,16 +121,14 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="text-center">
-                                    <p>Si has olvidado tu contraseña podrás resetearla aquí. Te enviaremos un email con tu nueva contraseña.</p>
+                                    <p>Si has olvidado tu contraseña podrás resetearla aquí. Te enviaremos un e-mail.</p>
                                     <div class="panel-body">
-                                        <form id="formModal" method="get" accept-charset="utf-8" novalidate>
-                                            <fieldset>
-                                                <div class="form-group">
-                                                    <input class="form-control input-lg" placeholder="E-mail" name="emailModal" type="email">
-                                                </div>
-                                                <input class="btn btn-lg btn-primary pull-right" value="Enviar contraseña" type="submit">
-                                            </fieldset>
-                                        </form>
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
+                                            </div>
+                                            <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                        </fieldset>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +137,7 @@
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12">
-                        <button id="cancelarmodal" class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
                     </div>
                 </div>
             </div>
@@ -183,6 +184,7 @@
             </div>
         </div>
     </div>
+    
     <div class="footer">
         <section></section>
         <section role="contentinfo" itemscope="itemscope">

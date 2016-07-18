@@ -1,6 +1,6 @@
 'use strict';
 $(document).ready(function() {
-	console.log('test');
+	
     $("#search").css("opacity", 0.7);
     $("#search").on('focusin', function() {
             $("#search").css({ translate: ['60px', '300px'] });

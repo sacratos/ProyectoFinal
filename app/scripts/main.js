@@ -1,6 +1,7 @@
 'use strict';
 $(document).ready(function() {
     $("#ok").hide();
+    $('#pwdModal').hide();
     $('#formularioEntrada').validate({
         rules: {
             emailEntrar: {
@@ -175,5 +176,35 @@ $(document).ready(function() {
             }
         });
     });
-    
+    $('#olvidado').on('click', function() {
+
+        $('#pwdModal').show('slow');
+        $('#enviarmodal').click(function() {
+            $('formModal').validate({
+                rules: {
+                    emailModal: {
+                        required: true,
+                    },
+                },
+                messages: {
+                    emailModal: {
+                        required: "Rellena este campo con tu email."
+                    },
+                },
+                submitHandler: function() {
+                    console.log('test');
+                    $.ajax({
+                        type: 'POST',
+
+                    })
+                }
+            })
+
+        })
+        $('#cancelarmodal').click(function() {
+            $('#pwdModal').hide('slow');
+        });
+    });
+
+
 });

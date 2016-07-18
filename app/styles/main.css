@@ -274,9 +274,7 @@ footer#footer {
 .marketing p + h4 {
     margin-top: 28px;
 }
-.parrafoImagen{
-    
-}
+
 
 
 /* Responsive: Portrait tablets and up */
@@ -302,9 +300,10 @@ footer#footer {
     }
     .error {
         width: auto;
-        color: white;
+        color: #550000;
         font-family: arial;
-        opacity: 0.8;
+        opacity: 1;
+        font-style: bold;
         font-size: small;
     }
     label {

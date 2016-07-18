@@ -27,6 +27,9 @@ $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
 
 $query1 = "INSERT INTO usuarios(nombre,apellidos,email,contrasena) VALUES('". $nombre ."','". $apellidos ."','". $email ."','". $contrasena ."')" ;
+$query2 = "INSERT INTO  `usuarios` (  `idusuario` ,  `nombre` ,  `apellidos` ,  `email` ,  `contrasena` ,  `foto_perfil` ,  `hash` ) 
+VALUES ( 1,  'pablo',  'sdj',  'pablusko_7@hotmail.com',  '1234567890', NULL , NULL )";
+
 
 $hecho1=0;
 if($query_res1=mysql_query($query1)){
