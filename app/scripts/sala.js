@@ -1,19 +1,5 @@
 'use strict';
 $(document).ready(function() {
-	
-    $("#search").css("opacity", 0.7);
-    $("#search").on('focusin', function() {
-            $("#search").css({ translate: ['60px', '300px'] });
-            console.log('test');
-            /*$("#search").transition({ width: '300px' }, 100);*/
-
-        })
-        /* .on('click', function() {
-             console.log('test');
-             $("#search").transition({ opacity: 1 }, 100);
-             
-         });*/
-    ;
 
     $('#form1').validate({
         rules: {

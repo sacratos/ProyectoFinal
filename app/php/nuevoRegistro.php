@@ -25,6 +25,7 @@ $nombre = $_POST["nombre"];
 $apellidos = $_POST["apellidos"];
 $email = $_POST["email"];
 $contrasena = $_POST["contrasena"];
+echo $nombre;
 
 $query1 = "INSERT INTO usuarios(nombre,apellidos,email,contrasena) VALUES('". $nombre ."','". $apellidos ."','". $email ."','". $contrasena ."')" ;
 $query2 = "INSERT INTO  `usuarios` (  `idusuario` ,  `nombre` ,  `apellidos` ,  `email` ,  `contrasena` ,  `foto_perfil` ,  `hash` ) 

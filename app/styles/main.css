@@ -153,18 +153,33 @@ meter {
 
 /* Custom page footer */
 
-.thumbnail {
+.thumbnail, .thumbnail2 {
     margin-left: auto;
     margin-top: 20px;
     background: none;
     color: white;
+    -webkit-transition: 0.5s; /* For Safari 3.1 to 6.0 */
+    transition: 0.5s;
+
+}
+.thumbnail3{
+    background: #B1647B;
+    color: black;
+    box-shadow: 3px 3px 40px 10px;
 }
 
 .thumbnail:hover {
     background: #9F5A81;
     color: black;
 }
-
+.thumbnail2:hover {
+    background: #814981;
+    color: black;
+    box-shadow: 3px 3px 40px 10px;
+}
+.placeholder{
+    margin-top: 10px;
+}
 
 /*FOOTER*/
 
