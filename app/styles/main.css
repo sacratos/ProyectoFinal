@@ -7,6 +7,23 @@
     padding: 0.2em 0;
 }
 
+.featurette-heading{
+    margin-top: 100px;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+}
+.featurette-image{
+    padding-right: 20%;
+}
+.featurette-image2{
+    padding-left: 20%;
+}
+#myCarousel{
+    background: #0E080E;
+    box-shadow: black 20px 0px 50px 20px;
+}
+/*#0E080E;*/
 
 /* Space out content a bit */
 
@@ -14,7 +31,12 @@ body {
     padding-top: 40px;
     padding-bottom: 20px;
     background: url("../images/fondo-inicio.png");
+    
     /*#8C82C8;*/
+}
+
+.fondo-slide{
+    background: #5a5a5a;
 }
 
 

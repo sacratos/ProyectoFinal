@@ -24,7 +24,7 @@ $(document).ready(function() {
             },
 
         },
-        submitHandler: function() {
+        submitHandler: function(form) {
             console.log('test');
             emailEntrar = $('#emailEntrar').val();
             contrasenaEntrar = $('#contrasenaEntrar').val();
@@ -205,6 +205,7 @@ $(document).ready(function() {
             $('#pwdModal').hide('slow');
         });
     });
+    
 
 
 });
