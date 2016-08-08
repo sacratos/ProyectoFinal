@@ -1,33 +1,33 @@
 'use strict';
 $(document).ready(function() {
-
+    
     $('#form1').validate({
         rules: {
             alto: {
                 required: true,
-        		digits: true
+                digits: true
             },
             largo: {
                 required: true,
-        		digits: true
+                digits: true
             },
             ancho: {
                 required: true,
-        		digits: true
+                digits: true
             },
         },
         messages: {
             alto: {
                 required: "este campo es requerido",
-        		digits: "solo dígitos"
+                digits: "solo dígitos"
             },
             largo: {
                 required: "este campo es requerido",
-        		digits: "solo dígitos"
+                digits: "solo dígitos"
             },
             ancho: {
                 required: "este campo es requerido",
-        		digits: "solo dígitos"
+                digits: "solo dígitos"
             },
 
         },

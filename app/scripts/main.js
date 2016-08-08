@@ -205,7 +205,4 @@ $(document).ready(function() {
             $('#pwdModal').hide('slow');
         });
     });
-    
-
-
 });

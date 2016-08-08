@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/main2.css">
     <link rel="stylesheet" href="styles/salas.css">
     <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
     <title>Dashboard</title>
@@ -63,69 +62,220 @@
                     <li><a href="">Another nav item</a></li>
                 </ul>
             </div>
-            <form id="form1" method="get" accept-charset="utf-8" novalidate>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <fieldset class="page-header">
-                    <h2>Detalles de la Sala:</h2></fieldset>
-                
-                    <div class="thumbnail3 row placeholders">
-                        <h2 class="text-muted">Dimensiones</h2>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="Largo">Largo</label>
-                            <div class="col-sm-8">
-                                <input id="largo" name="largo" placeholder="L" class="form-control input-md" type="number">m
+                <div class="thumbnail3">
+                    <div class="row placeholders">
+                        <form class="form-horizontal" id="form1" method="get" novalidate>
+                            <h2 class="text-muted"><strong>Crear Nueva Sala</strong></h2>
+                            <div class="col-sm-7">
+                                <div class="form-group">
+                                    <label for="nombresala" class="col-sm-4 control-label">Nombre de la sala:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="nombresala" name="nombresala" placeholder="Introduce un nombre">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidos" class="col-sm-4 control-label">Descripción:</label>
+                                    <div class="col-sm-6">
+                                        <input type="textarea" class="form-control" id="descripcion" name="descripcion" placeholder="Introduce una pequeña descripción de la sala">
+                                    </div>
+                                </div>
                             </div>
+                        </form>
+                        <div class="col-sm-5">
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                Select image to upload:
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input type="submit" value="Upload Image" name="submit">
+                            </form>
                         </div>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="contrasenaEntrar">Ancho</label>
+                    </div>
+                </div>
+                <form id="form2" method="get" accept-charset="utf-8" novalidate>
+                    <fieldset class="page-header">
+                        <h2 class="center-block">Detalles de la Sala:</h2></fieldset>
+                    <div class="thumbnail3">
+                        <div class="row placeholders">
+                            <h2 class="text-muted">Dimensiones</h2>
+                            <p><strong>· Escribe las dimensiones de tu nueva sala.</strong></p>
                             <div class="col-sm-8">
-                                <input id="ancho" name="ancho" placeholder="A" class="form-control input-md" type="number">m
+                                <div class="col-sm-4 placeholder">
+                                    <label class="control-label col-sm-4" for="Largo">Largo</label>
+                                    <div class="col-sm-8">
+                                        <input id="largo" name="largo" placeholder="L" class="form-control input-md" type="number">m
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 placeholder">
+                                    <label class="control-label col-sm-4" for="contrasenaEntrar">Ancho</label>
+                                    <div class="col-sm-8">
+                                        <input id="ancho" name="ancho" placeholder="A" class="form-control input-md" type="number">m
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 placeholder">
+                                    <label class="control-label col-sm-4" for="contrasenaEntrar">Alto</label>
+                                    <div class="col-sm-8">
+                                        <input id="alto" name="alto" placeholder="H" class="form-control input-md" type="number">m
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12 placeholder">
+                                        <label class="control-label col-sm-2" for="contrasenaEntrar">Volumen</label>
+                                        <div class="col-sm-9">
+                                            <input id="volumen" name="volumen" placeholder="V" class="form-control input-md" type="number">
+                                        </div>
+                                        <p class="col-sm-1">m3</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="contrasenaEntrar">Alto</label>
-                            <div class="col-sm-8">
-                                <input id="alto" name="alto" placeholder="H" class="form-control input-md" type="number">m
-                            </div>
-                        </div>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-2" for="contrasenaEntrar">Volumen</label>
-                            <div class="col-sm-10">
-                                <input id="volumen" name="volumen" placeholder="V" class="form-control input-md" type="number">m3
+                            <div class="col-sm-4">
+                                <img class="menos-margin" src="../images/tr.jpg" alt="tr">
                             </div>
                         </div>
                     </div>
-                    <div class="thumbnail3 row placeholders">
-                        <h2 class="text-muted">Dimensiones</h2>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="Largo">Largo</label>
-                            <div class="col-sm-8">
-                                <input id="largo" name="largo" placeholder="L" class="form-control input-md" type="number">
+                    <div id="tabla" class="thumbnail3 row placeholder">
+                        <div class="col-md-12">
+                            <table id="miTabla" class="table stripe">
+                                <!--cabecera de la pagina, titulo e icono-->
+                                <div id="edicionok" class="alert alert-success" role="alert">Edicion correta!</div>
+                                <div id="edicionerr" class="alert alert-danger" role="alert">Edicion erronea!</div>
+                                <!--boton añadir doctor-->
+                                <button id="creaMat" type="button" class="btn btn-success navbar-btn">Añadir material</button>
+                                <!--tabla-->
+                                <thead>
+                                    <th>Nombre Material</th>
+                                    <th>Superficie del material</th>
+                                    <th>Porcentaje de Absorción</th>
+                                    <th>Absorción total</th>
+                                    <th>Editar</th>
+                                    <th>Borrar</th>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                    <th>Nombre Material</th>
+                                    <th>Superficie del material</th>
+                                    <th>Porcentaje de Absorción</th>
+                                    <th>Absorción total</th>
+                                    <th>Borrar</th>
+                                </tfoot>
+                            </table>
+                            <h5 class="center-block"><strong>Absorción total de la sala: </strong></h5>
+                            <div class="col-sm-5">
+                            </div>
+                            <div class="col-sm-2">
+                                <input disabled="true" type="text" name="">
+                            </div>
+                            <div class="col-sm-5">
                             </div>
                         </div>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="contrasenaEntrar">Ancho</label>
-                            <div class="col-sm-8">
-                                <input id="ancho" name="ancho" placeholder="A" class="form-control input-md" type="number">
+                    </div>
+                    <div id="formulario" class="row">
+                        <div class="col-md-4 col-md-offset-3">
+                            <!--/*el formulario es aproximadamente un copy-paste de http://getbootstrap.com/css/#forms -->
+                            <form class="form-horizontal" id="formEditar" method="post" novalidate>
+                                <div>
+                                    <h2>Editar Material</h2>
+                                    <div class="form-group">
+                                        <label for="idMaterial" class="col-sm-2 control-label">Identificador Material:</label>
+                                        <div class="col-sm-10">
+                                            <input disabled="true" type="text" class="form-control" id="idMaterial">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="materialNuevo" class="col-sm-2 control-label">Nombre Material:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="material" name="material" placeholder="Nombre del material">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="superficie" class="col-sm-2 control-label">Superficie del material:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" id="superficie" name="superficie" placeholder="Superficie (en m2)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="absorcion" class="col-sm-2 control-label">Porcentaje de Absorción:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" id="absorcion" name="absorcion" placeholder="Absorción acústica del material (de 0 a 1)">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <p>Si no sabes cual es el coeficiente de absorcion de tu material, puedes consultar la siguiente tabla:</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10 col-sm-offset-2">
+                                            <button id="enviar" type="submit" class="btn btn-primary">Enviar</button>
+                                            <a class="btn btn-danger" href="sala.html" role="button">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ventana modal borrar
+        -->
+                    <div class="modal fade" id="basicModal" name="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Borrar material</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h3>¿Desea borrar el material?</h3>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" type="submit" id="confBorrar" name="confBorrar" data-dismiss="modal" class="btn btn-primary aceptarBorrado">Si, eliminar este material</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 placeholder">
-                            <label class="control-label col-sm-4" for="contrasenaEntrar">Alto</label>
-                            <div class="col-sm-8">
-                                <input id="alto" name="alto" placeholder="H" class="form-control input-md" type="number">
-                            </div>
+                    </div>
+                    <!-- formulario boton añadir material
+        -->
+                    <div id="formularioCrear" class="row">
+                        <div class="col-md-4 col-md-offset-3">
+                            <!--/*el formulario es aproximadamente un copy-paste de http://getbootstrap.com/css/#forms -->
+                            <form class="form-horizontal" id="formCrear" name="formCrear" method="post" action="#">
+                                <div>
+                                    <h2>Añadir un nuevo Material</h2>
+                                    <div class="form-group">
+                                        <label for="materialNuevo" class="col-sm-2 control-label">Nombre Material:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="materialNuevo" name="materialNuevo" placeholder="Nombre del material">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="superficieNueva" class="col-sm-2 control-label">Superficie del material:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" id="superficieNueva" name="superficieNueva" placeholder="Superficie (en m2)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="absorcionNueva" class="col-sm-2 control-label">Porcentaje de Absorción:*</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" id="absorcionNueva" name="absorcionNueva" placeholder="Absorción acústica del material (de 0 a 1)">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-10 col-sm-offset-2">
+                                            <button id="enviarMat" type="submit" class="btn btn-primary">Enviar</button>
+                                            <a class="btn btn-danger" href="index.html" role="button">Cancelar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     
             </div>
-            
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                    <button class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
+                <button class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
             </div>
             </form>
         </div>
     </div>
     </div>
+    <script src="scripts/tabla-materiales.js"></script>
     <script src="scripts/salas.js"></script>
     <script src="scripts/sala.js"></script>
     <script src='../bower_components/jquery.transit/jquery.transit.js'></script>
