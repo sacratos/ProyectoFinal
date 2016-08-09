@@ -109,6 +109,9 @@ meter {
 .menos-margin {
     margin-top: -20px;
 }
+.mucho-menos-margin{
+    margin-top: -70px;
+}
 
 .center-block {
     text-align: center;

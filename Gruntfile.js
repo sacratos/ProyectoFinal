@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: 'dist'
+    dist: '/var/www/ProyectosFinalesDAW'
   };
 
   // Define the configuration for all the tasks
@@ -164,8 +164,8 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         ignorePath: /^\/|\.\.\//,
-        src: ['<%= config.app %>/index.html'],
-        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']
+        src: ['<%= config.app %>/index.html','<%= config.app %>/salas.html','<%= config.app %>/sala.html']/*,
+        exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']*/
       }
     },
 
