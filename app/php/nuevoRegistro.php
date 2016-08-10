@@ -28,7 +28,7 @@ $contrasena = $_POST["contrasena"];
 echo $nombre;
 
 $query1 = "INSERT INTO usuarios(nombre,apellidos,email,contrasena) VALUES('". $nombre ."','". $apellidos ."','". $email ."','". $contrasena ."')" ;
-$query2 = "INSERT INTO  `usuarios` (  `idusuario` ,  `nombre` ,  `apellidos` ,  `email` ,  `contrasena` ,  `foto_perfil` ,  `hash` ) 
+$query3 = "INSERT INTO  `usuarios` (  `idusuario` ,  `nombre` ,  `apellidos` ,  `email` ,  `contrasena` ,  `foto_perfil` ,  `hash` ) 
 VALUES ('". $id ."','". $nombre ."','". $apellidos ."','". $email ."','". $contrasena ."','NULL','NULL')";
 
 
@@ -60,7 +60,7 @@ if($n==1){$hecho2=1;}
 if ($hecho1==0 || $hecho2==0) {
   
     if (mysql_errno() == 1062) {
-        $mensaje = "Imposible añadir el usuario, num colegiado ya existe";
+        $mensaje = "Imposible añadir el usuario, este email ya existe";
         $estado = mysql_errno();
     } else {
         $mensaje = 'Error en la cnsulta: ' . mysql_error() . "\n";
@@ -77,5 +77,7 @@ $resultado = array();
       'mensaje' => $mensaje,
       'estado' => $estado
    );
+ header("refresh:5; url=http://www.soundmov.com/salas.html");
 echo json_encode($resultado);
+
 ?>

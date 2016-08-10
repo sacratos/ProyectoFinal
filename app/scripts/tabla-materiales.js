@@ -1,22 +1,77 @@
 'use strict';
 $(document).ready(function() {
-    $('#formulario').hide();
+    $('#formularioEditar').hide();
     $('#formularioCrear').hide();
     $('#edicionok').hide();
     $('#edicionerr').hide();
-    $('#creaDoc').click(function(e) {
-           e.preventDefault();
+    $('#materialCreado').hide();
+    $('#creaMat').click(function(e) {
+        e.preventDefault();
 
-           //oculto tabla muestro form
-          $('#tabla').fadeOut(100);
-          $('#formularioCrear').fadeIn(100);
-          cargarClinicaCrear();
+        //oculto tabla muestro form
+        $('#tabla').fadeOut(100);
+        $('#formularioCrear').fadeIn(100);
+        //cargarClinicaCrear();
 
-       });
-    var miTabla = $('#miTabla').DataTable({
+        //VALIDACION FORMULARIO CREAR
+        $('#formCrear').validate({
+            rules: {
+                materialNuevo: {
+                    required: true,
+                },
+                superficieNueva: {
+                    required: true,
+                    number: true
+                },
+                absorcionNueva: {
+                    required: true,
+                    number: true
+                }
+            },
+            messages: {
+                materialNuevo: {
+                    required: "Este campo es requerido",
+                },
+                superficieNueva: {
+                    required: "Este campo es requerido",
+                    number: "Solo dígitos"
+                },
+                absorcionNueva: {
+                    required: "Este campo es requerido",
+                    number: "Solo dígitos"
+                },
+
+            },
+            submitHandler: function() {
+                var materialNuevo = $('#materialNuevo').val();
+                var superficieNueva = $('#superficieNueva').val();
+                var absorcionNueva = $('#absorcionNueva').val();
+                console.log('Material: ' + materialNuevo + '; Superficie: ' + superficieNueva + '; Absorcion: ' + absorcionNueva);
+                
+                $('#formularioCrear').fadeOut(100);
+                $('#tabla').fadeIn(100);
+                $('#materialCreado').show(1000);
+                
+            }
+        });
+        //FIN VALIDACION FORMULARIO CREAR
+
+    });
+    $('#cancelarCrear').on('click', function(e) {
+        e.preventDefault();
+        $('#formularioCrear').fadeOut(100);
+        $('#tabla').fadeIn(100);
+    });
+    $('#cancelarEditar').on('click', function(e) {
+        e.preventDefault();
+        $('#formularioEditar').fadeOut(100);
+        $('#tabla').fadeIn(100);
+    });
+    var miTabla;
+    miTabla = $('#miTabla').dataTable({
         'processing': true,
         'serverSide': true,
-        'ajax': 'php/cargar_vclinicas_mejor.php',
+        'ajax': 'php/cargar_tabla_materiales.php',
         'language': {
             'sProcessing': 'Procesando...',
             'sLengthMenu': 'Mostrar _MENU_ registros',
@@ -42,23 +97,17 @@ $(document).ready(function() {
             }
         },
         'columns': [{
-            'data': 'nombre'
+            'data': 'nombrematerial'
         }, {
-            'data': 'numcolegiado'
+            'data': 'porcentaje_absorcion'
         }, {
-            'data': 'nombreClinica',
-            'render': function(data) {
-                return '<li>' + data + '</li><br>';
-            }
+            'data': 'superficie',
         }, {
-            'data': 'idClinica',
-            "visible": false
-        }, {
-            'data': 'idDoctor',
+            'data': 'idmaterial',
             /*añadimos las clases editarbtn y borrarbtn para procesar los eventos click de los botones. No lo hacemos mediante id ya que habrá más de un
             botón de edición o borrado*/
             'render': function(data) {
-                return '<a class="btn btn-primary editarbtn" href=http://localhost/php/modificar_clinica.php?id_doctor=' + data + '>Editar</a><a data-toggle="modal" data-target="#basicModal"  class="btn btn-warning borrarbtn" href=http://localhost/php/borrar_doctor.php?id_doctor=' + data + '>Borrar</a>';
+                return '<a class="btn btn-primary editarbtn" href=http://localhost/php/modificar_material.php?idmaterial=' + data + '>Editar</a><a data-toggle="modal" data-target="#basicModal"  class="btn btn-warning borrarbtn" href=http://localhost/php/borrarmaterial.php?idmaterial=' + data + '>Borrar</a>';
             }
         }]
     });
@@ -66,7 +115,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         $('#tabla').fadeOut(100);
-        $('#formulario').fadeIn(100);
+        $('#formularioEditar').fadeIn(100);
 
         var nRow = $(this).parents('tr')[0];
         var aData = miTabla.row(nRow).data();
@@ -215,14 +264,14 @@ $(document).ready(function() {
                         });
                     }
                 },
-                complete: {
-                }
+                complete: {}
             });
             $('#tabla').fadeIn(100);
-            $('#formulario').fadeOut(100);
+            $('#formularioEditar').fadeOut(100);
         }
     });
     //FIN VALIDACION FORMULARIO EDITAR
+
 
 
 

@@ -1,7 +1,9 @@
-<?php
+<?php 
+
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 // ini_set('display_errors', '1');
 /* Definimos los parámetros de conexión con la bbdd: */
+
 $dbinfo = "mysql:dbname=DBProyectoFinal;host=localhost";
 $user = "root";
 $pass = "swesaswesa7,.";
@@ -32,8 +34,10 @@ if (isset($_REQUEST['emailEntrar'])) {
      */
     $valid = 'true';
     if ($sql->rowCount() > 0) {
+        echo "El usuario ya existe";
         $valid= 'false';
     } else {
+        echo "El usuario no existe";
        $valid='true';
     }
 }

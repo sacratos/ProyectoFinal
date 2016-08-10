@@ -31,7 +31,7 @@ $(document).ready(function() {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: '../php/comprobarIdentidad.php',
+                url: '../php/validarEmail.php',
                 data: {
                     emailEntrar: email,
                     contrasenaEntrar: contrasena,

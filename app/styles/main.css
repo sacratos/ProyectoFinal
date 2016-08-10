@@ -52,7 +52,10 @@ body {
 .fondo-slide {
     background: #5a5a5a;
 }
-
+.imagenlogo{
+    padding-left: 15px;
+    margin-top: 0px;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 

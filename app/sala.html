@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="styles/salas.css">
     <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
     <title>Dashboard</title>
-    <!--Los scripts se cargan siempre después de los css, nunca antes!-->
-    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="../bower_components/jquery.complexify.js/jquery.complexify.js"></script>
 </head>
 
 <body>
@@ -26,23 +22,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Nombre de usuario</a>
+                <a class="imagenlogo" href="salas.html"><img src="../images/logo4.png"></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Mi Perfil</a></li>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Settings</a></li>
-                    <li><a type="button" data-toggle="tooltip" data-placement="bottom" title="Enviar un mensaje" href="#">Help</a></li>
-                    <li>
-                        <a type="button" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                            Popover on bottom
-                        </a>
-                    </li>
+                    <li><a href="perfil.html">Mi Perfil</a></li>
+                    <li><a href="salas.html">Dashboard</a></li>
+                    <li><a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Ayuda</a></li>
+                    <li style="visibility:hidden;"><a>AQUI</a></li>
+                    <li style="visibility:hidden;"><a></a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <input type="text" id="search" class="form-control" placeholder="Search...">
-                </form>
+                
             </div>
         </div>
     </nav>
@@ -54,13 +44,7 @@
                     <li><a href="salas.html">Lista de salas</a></li>
                     <li><a href="#">Export</a></li>
                 </ul>
-                <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item</a></li>
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                    <li><a href="">More navigation</a></li>
-                </ul>
+                
                 <ul class="nav nav-sidebar">
                     <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
@@ -71,7 +55,7 @@
                 <div class="thumbnail3">
                     <div class="row placeholders">
                         <form class="form-horizontal" id="form1" method="get" novalidate>
-                            <h2 class="text-muted"><strong>Crear Nueva Sala</strong></h2>
+                            <h2 class="text-muted">Crear Nueva Sala</h2>
                             <div class="col-sm-7">
                                 <div class="form-group">
                                     <label for="nombresala" class="col-sm-4 control-label">Nombre de la sala:</label>
@@ -103,7 +87,7 @@
                         <div class="row placeholders">
                             <h2 class="text-muted">Dimensiones</h2>
                             <p><strong>· Escribe las dimensiones de tu nueva sala.</strong></p>
-                            <div class="col-sm-8">
+                            <div class="col-sm-8 col-xs-12">
                                 <div class="col-sm-4 placeholder">
                                     <label class="control-label col-sm-4" for="Largo">Largo</label>
                                     <div class="col-sm-8">
@@ -132,17 +116,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
-                                <img class="menos-margin mucho-menos-margin" src="../images/cubo.png" alt="tr">
+                        
+                            <div class="col-sm-4 col-xs-0">
+                                <img class="center-block img-responsive menos-margin mucho-menos-margin" src="../images/cubo.png" alt="tr">
                             </div>
+
                         </div>
                     </div>
                     <div id="tabla" class="thumbnail3 row placeholder">
+                    <h1 class="text-muted center-block">Materiales</h1>
                         <div class="col-md-12">
                             <table id="miTabla" class="table stripe">
                                 <!--cabecera de la pagina, titulo e icono-->
-                                <div id="edicionok" class="alert alert-success" role="alert">Edicion correta!</div>
-                                <div id="edicionerr" class="alert alert-danger" role="alert">Edicion erronea!</div>
+                                <div id="edicionok" class="alert-success" role="alert">Edicion correta!</div>
+                                <div id="edicionerr" class="alert-danger" role="alert">Edicion erronea!</div>
+                                <div id="materialCreado" class="alert-success" role="alert">Material creado correctamente.</div>
                                 <!--boton añadir doctor-->
                                 <button id="creaMat" type="button" class="btn btn-success navbar-btn">Añadir material</button>
                                 <!--tabla-->
@@ -161,6 +149,7 @@
                                     <th>Superficie del material</th>
                                     <th>Porcentaje de Absorción</th>
                                     <th>Absorción total</th>
+                                    <th>Editar</th>
                                     <th>Borrar</th>
                                 </tfoot>
                             </table>
@@ -174,7 +163,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="formulario" class="row">
+                    <div id="formularioEditar" class="row">
                         <div class="col-md-4 col-md-offset-3">
                             <!--/*el formulario es aproximadamente un copy-paste de http://getbootstrap.com/css/#forms -->
                             <form class="form-horizontal" id="formEditar" method="post" novalidate>
@@ -210,7 +199,7 @@
                                     <div class="form-group">
                                         <div class="col-sm-10 col-sm-offset-2">
                                             <button id="enviar" type="submit" class="btn btn-primary">Enviar</button>
-                                            <a class="btn btn-danger" href="sala.html" role="button">Cancelar</a>
+                                            <a class="btn btn-danger" id="cancelarEditar" role="button">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -237,52 +226,49 @@
                     </div>
                     <!-- formulario boton añadir material
         -->
-                    <div id="formularioCrear" class="row">
-                        <div class="col-md-4 col-md-offset-3">
+                    <div id="formularioCrear" class="thumbnail3 row">
+                        <div class="col-md-6 col-md-offset-3">
                             <!--/*el formulario es aproximadamente un copy-paste de http://getbootstrap.com/css/#forms -->
-                            <form class="form-horizontal" id="formCrear" name="formCrear" method="post" action="#">
+                            <form class="form-horizontal" id="formCrear" name="formCrear" method="post" novalidate>
                                 <div>
                                     <h2>Añadir un nuevo Material</h2>
                                     <div class="form-group">
-                                        <label for="materialNuevo" class="col-sm-2 control-label">Nombre Material:*</label>
-                                        <div class="col-sm-10">
+                                        <label for="materialNuevo" class="col-sm-4 control-label">Nombre Material:*</label>
+                                        <div class="col-sm-8">
                                             <input type="text" class="form-control" id="materialNuevo" name="materialNuevo" placeholder="Nombre del material">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="superficieNueva" class="col-sm-2 control-label">Superficie del material:*</label>
-                                        <div class="col-sm-10">
+                                        <label for="superficieNueva" class="col-sm-4 control-label">Superficie del material:*</label>
+                                        <div class="col-sm-8">
                                             <input type="number" class="form-control" id="superficieNueva" name="superficieNueva" placeholder="Superficie (en m2)">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="absorcionNueva" class="col-sm-2 control-label">Porcentaje de Absorción:*</label>
-                                        <div class="col-sm-10">
+                                        <label for="absorcionNueva" class="col-sm-4 control-label">Porcentaje de Absorción:*</label>
+                                        <div class="col-sm-8">
                                             <input type="number" class="form-control" id="absorcionNueva" name="absorcionNueva" placeholder="Absorción acústica del material (de 0 a 1)">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-10 col-sm-offset-2">
-                                            <button id="enviarMat" type="submit" class="btn btn-primary">Enviar</button>
-                                            <a class="btn btn-danger" href="index.html" role="button">Cancelar</a>
+                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                            <a class="btn btn-danger" id="cancelarCrear" role="button">Cancelar</a>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                        <button class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <button class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
-            </div>
-            </form>
         </div>
     </div>
     </div>
-    <script src="scripts/tabla-materiales.js"></script>
-    <script src="scripts/salas.js"></script>
-    <script src="scripts/sala.js"></script>
-    <script src='../bower_components/jquery.transit/jquery.transit.js'></script>
+    <!--Los scripts se cargan siempre después de los css, nunca antes!-->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -291,6 +277,24 @@
     window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
     </script>
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="bower_components/jquery-validation/dist/additional-methods.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/jquery.transit/jquery.transit.js"></script>
+    <script src="bower_components/modal-js/dist/modal.js"></script>
+    <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="bower_components/growl/javascripts/jquery.growl.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/jquery.dataTables.js"></script>
+    <script src="scripts/dataTables.bootstrap.js"></script>
+    <script src="scripts/tabla-materiales.js"></script>
+    <script src="scripts/sala.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

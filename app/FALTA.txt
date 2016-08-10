@@ -1,0 +1,9 @@
+FALTA:
+
+- El volumen se debe calcular solo, en cuanto se rellenen los campos de largo alto y ancho
+
+- Se puede hacer el boton crear material.
+
+Al seleccionar una sala, se deben cargar los datos de esa sala en los campos y en LA TABLA.
+
+- Crear pestaña de perfil en la que se puedan modificar los datos personales, tales como CONTRASEÑA, NOMBRE_USUARIO, FOTO_PERFIL.
