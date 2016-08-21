@@ -48,13 +48,24 @@ body {
     background: url("../images/fondo-inicio.png");
     /*#8C82C8;*/
 }
-
+.marggin{
+margin: 20px 20px 20px 20px;
+}
 .fondo-slide {
     background: #5a5a5a;
 }
 .imagenlogo{
     padding-left: 15px;
     margin-top: 0px;
+}
+.mimagen{
+    width: 140px; 
+    height: 140px;
+    transition: 1s;
+}
+.mimagen:hover{
+    width: 170px;
+    height: 170px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -173,6 +184,10 @@ meter {
     position: absolute;
     margin: -110px 60px 100px 390px;
     z-index: 1;
+    transition:1s;
+}
+.cara1:hover{
+    transform: rotate(360deg);
 }
 
 .hand1 {
@@ -180,6 +195,10 @@ meter {
     margin: -140px -40px 0;
     z-index: 1;
     opacity: 0.5;
+    transition:0.5s;
+}
+.hand1:hover {
+    transform: rotateY(180deg);
 }
 
 .wave2 {
@@ -361,7 +380,6 @@ footer#footer {
         border-bottom: 0;
     }
     .error {
-        width: auto;
         color: #550000;
         font-family: arial;
         opacity: 1;

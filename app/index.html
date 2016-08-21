@@ -23,8 +23,9 @@
     <div class="container">
         <div class="col-lg-1">
         </div>
+        <!--FORMULARIO ENTRADA-->
         <div class="col-lg-4 col-sm-10 col-md-10 thumbnail">
-            <form accept-charset="UTF-8" class="input-list style-4 clearfix" id="formularioEntrada" action="php/comprobarIdentidad.php" method="post" novalidate>
+            <form id="formularioEntrada" accept-charset="UTF-8" action="php/validarEmail.php" class="input-list style-4 clearfix" method="post" novalidate>
                 <h1 class="text-muted center-block">Entrar</h1><img class="hand1" src="../images/hand-ok.png"><img class="wave2" src="../images/wave2.png">
                 <div id="ok"></div>
                 <!-- Text input EMAIL-->
@@ -54,9 +55,10 @@
         </div>
         <div class="col-lg-1">
         </div>
+        <!--FORMULARIO REGISTRO-->
         <div class="thumbnail col-lg-5 col-md-10 col-sm-10">
             <div class="caja-modal">
-                <form accept-charset="UTF-8" action="php/nuevoRegistro.php" class="input-list style-4 clearfix" id="formulario" method="post">
+                <form id="formularioRegistro" accept-charset="UTF-8" action="php/nuevoRegistro.php" class="input-list style-4 clearfix" method="post">
                     <h1 class="text-muted center-block">Registrate! <small class="text-muted"> It's free</small></h1><img class="cara1" src="../images/cara1.png"><img class="wave3" src="../images/wave3.png">
                     <div class="col-sm-12">
                         <label class="control-label col-sm-4" for="nombre">Nombre<span>*</span></label>
@@ -106,7 +108,7 @@
         <div class="col-lg-1">
         </div>
     </div>
-    <!--modal-->
+    <!--MODAL CONTRASEÑA OLVIDADA-->
     <div id="pwdModal" class="modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -121,7 +123,7 @@
                                 <div class="text-center">
                                     <p>Si has olvidado tu contraseña podrás resetearla aquí. Te enviaremos un email con tu nueva contraseña.</p>
                                     <div class="panel-body">
-                                        <form id="formModal" method="get" accept-charset="utf-8" novalidate>
+                                        <form id="formModal" method="post" accept-charset="utf-8" novalidate>
                                             <fieldset>
                                                 <div class="form-group">
                                                     <input class="form-control input-lg" placeholder="E-mail" name="emailModal" type="email">
@@ -143,22 +145,30 @@
             </div>
         </div>
     </div>
+    <!--QUIENES SOMOS-->
     <div class="thumbnail">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-6">
-                    <img class="img-circle center-block" src="../images/nosotros.jpg" alt="Generic placeholder image" width="140" height="140">
-                    <h2 class="letra center-block">¿Quienes somos?</h2>
-                    <p class="center-block">Somos un grupo de aficionados dedicados al <strong>mundo del sonido</strong>. Esta página ha sido creada para <strong>facilitar</strong> la obtencion de diferentes parametros que te ayudarán a comprender de una manera óptima el estado acústico de la sala o salas que tengas como objetivo trabajar.</p>
+                <div class="col-lg-1">
                 </div>
-                <div class="col-lg-6">
-                    <img class="img-circle center-block" src="../images/pregunta.jpg" alt="Generic placeholder image" width="170" height="170">
+                <div class="col-lg-4">
+                    <img class="mimagen img-circle center-block" src="../images/nosotros.jpg" alt="Generic placeholder image">
+                    <h2 class="letra center-block">¿Quienes somos?</h2>
+                    <p class="center-block"><i>Somos un grupo de estudiantes y aficionados que trabajamos entorno al <strong>sonido</strong>. El estudio del sonido es para nosotros, una parte <strong>esencial</strong> en el diseño y acondicionamiento de cualquier sala, en la que se pueda llevar a cabo un espectaculo sonoro o audiovisual.</i></p>
+                </div>
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-5">
+                    <img class="mimagen img-circle center-block" src="../images/pregunta.jpg" alt="Generic placeholder image">
                     <h2 class="letra center-block">¿A quienes va destinada esta página?</h2>
-                    <p class="center-block">Somos un grupo de aficionados dedicados al <strong>mundo del sonido</strong>. Esta página ha sido creada para <strong>facilitar</strong> la obtencion de diferentes parametros que te ayudarán a comprender de una manera óptima el estado acústico de la sala o salas que tengas como objetivo trabajar.</p>
+                    <p class="center-block"><i>Esta página está dedicada de forma especial a aquellas personas que se dedican al <strong>trabajo en el mundo del sonido</strong>. Esta página ha sido creada para <strong>facilitar</strong> la obtencion de diferentes parametros que te ayudarán a comprender de una manera óptima el estado acústico de la sala o salas que tengas como objetivo trabajar.</i></p>
+                </div>
+                <div class="col-lg-1">
                 </div>
             </div>
         </div>
     </div>
+    <!--CAROUSEL-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -216,8 +226,7 @@
                 <div class="col-md-6 col-xs-7">
                     <h1 class="featurette-heading">Disminución espacial.</h1>
                     <br>
-                    <p class="lead">La lectura de los niveles de presión acústica (Lp) en diferentes puntos, situados
-progresivamente a distancias cada vez más lejanas de la fuente.</p>
+                    <p class="lead">La lectura de los niveles de presión acústica (Lp) en diferentes puntos, situados progresivamente a distancias cada vez más lejanas de la fuente.</p>
                 </div>
                 <div class="col-md-1 col-xs-1">
                 </div>
@@ -234,6 +243,7 @@ progresivamente a distancias cada vez más lejanas de la fuente.</p>
             <span class="sr-only">Next</span>
         </a>
     </div>
+    <!--FOOTER-->
     <div class="footer">
         <section></section>
         <section role="contentinfo" itemscope="itemscope">

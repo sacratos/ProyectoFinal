@@ -32,6 +32,7 @@ if (isset($_REQUEST['emailEntrar'])) {
      * Sin embargo, este comportamiento no está garantizado para todas las bases de datos y no debería confiarse en él para 
      * aplicaciones portables.
      */
+
     $valid = 'true';
     if ($sql->rowCount() > 0) {
         echo "El usuario ya existe";

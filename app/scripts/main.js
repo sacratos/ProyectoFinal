@@ -24,7 +24,7 @@ $(document).ready(function() {
             },
 
         },
-        submitHandler: function(form) {
+        submitHandler: function() {
             console.log('test');
             emailEntrar = $('#emailEntrar').val();
             contrasenaEntrar = $('#contrasenaEntrar').val();
@@ -63,7 +63,7 @@ $(document).ready(function() {
             });
         }
     });
-    $('#formulario').validate({
+    $('#formularioRegistro').validate({
         rules: {
             nombre: {
                 required: true,
@@ -195,12 +195,46 @@ $(document).ready(function() {
                     console.log('test');
                     $.ajax({
                         type: 'POST',
+                        url: '../php/nuevo.php',
+                        dataType: 'json',
+                        /*data: datos,     ---- ES LO MISMO ----  */
+                        data: {
+                            nombreNuevo: nombre,
+                            apellidosNuevo: apellidos,
+                            emailNuevo: email,
+                            contrasenaNueva: contrasena
+                        },
+                        success: function(data) {
+                            console.log('test');
+                            if (data[0].estado == 0) {
 
-                    })
+                                $.growl({
+
+                                    icon: "glyphicon glyphicon-ok",
+                                    message: "INSERCCIÓN CORRECTA"
+
+                                }, {
+                                    type: "success"
+                                });
+                            } else {
+
+                                $.growl({
+
+                                    icon: "glyphicon glyphicon-remove",
+                                    message: "ERROR: fallo al hacer el doctor"
+
+                                }, {
+                                    type: "danger"
+                                });
+                            }
+
+                        },
+                        complete: {}
+                    });
                 }
-            })
+            });
 
-        })
+        });
         $('#cancelarmodal').click(function() {
             $('#pwdModal').hide('slow');
         });

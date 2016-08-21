@@ -1,35 +1,86 @@
 'use strict';
+
 $(document).ready(function() {
-    $(document).ready(function() {
-        $('[data-toggle="popover"]').popover();
+
+    $('[data-toggle="popover"]').popover();
+
+    //Cargar imagen de Sala:
+    $(function() {
+        $('#file-input').change(function(e) {
+            addImage(e);
+        });
+
+        function addImage(e) {
+            var file = e.target.files[0],
+                imageType = /image.*/;
+
+            if (!file.type.match(imageType))
+                return;
+
+            var reader = new FileReader();
+            reader.onload = fileOnload;
+            reader.readAsDataURL(file);
+        }
+
+        function fileOnload(e) {
+            var result = e.target.result;
+            $('#imgSalida').attr("src", result);
+        }
     });
+
     $('#form1').validate({
+        rules: {
+            nombresala: {
+                required: true,
+            },
+            descripcion: {
+                required: true,
+            },
+        },
+        messages: {
+            nombresala: {
+                required: "Este campo es requerido",
+            },
+            descripcion: {
+                required: "Este campo es requerido",
+            },
+
+        },
+        submitHandler: function() {
+            var nombresala = $('#nombresala').val();
+            var descripcion = $('#descripcion').val();
+            console.log('Nombre: ' + nombresala + '; Descripcion: ' + descripcion);
+        },
+
+    });
+
+    $('#form2').validate({
         rules: {
             alto: {
                 required: true,
-                digits: true
+                number: true
             },
             largo: {
                 required: true,
-                digits: true
+                number: true
             },
             ancho: {
                 required: true,
-                digits: true
+                number: true
             },
         },
         messages: {
             alto: {
-                required: "este campo es requerido",
-                digits: "solo dígitos"
+                required: "Este campo es requerido",
+                number: "Solo dígitos"
             },
             largo: {
-                required: "este campo es requerido",
-                digits: "solo dígitos"
+                required: "Este campo es requerido",
+                number: "Solo dígitos"
             },
             ancho: {
-                required: "este campo es requerido",
-                digits: "solo dígitos"
+                required: "Este campo es requerido",
+                number: "Solo dígitos"
             },
 
         },
@@ -41,5 +92,15 @@ $(document).ready(function() {
         },
 
     });
+
+    var volumen = $('#volumen').val();
+    volumen = 2;
+    $('#largo').on('focusout', function() {
+        if ($('#largo').val()!="") {
+            volumen += $('#largo').val();
+
+        }
+    });
+
 
 });

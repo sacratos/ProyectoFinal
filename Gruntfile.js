@@ -19,7 +19,8 @@ module.exports = function (grunt) {
   // Configurable paths
   var config = {
     app: 'app',
-    dist: '/var/www/ProyectosFinalesDAW'
+    //dist: 'dist'
+    dist: '/var/www/ProyectosFinalesDAW/dist'
   };
 
   // Define the configuration for all the tasks
@@ -292,6 +293,10 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
             'php/{,*/}*.php',
+            'scripts/{,*/}*.js',
+            'images/{,*/}*.*',
+            'icons/{,*/}*.png',
+            'styles/{,*/}*.css',
           ]
         }, {
           src: 'node_modules/apache-server-configs/dist/.htaccess',
@@ -300,8 +305,44 @@ module.exports = function (grunt) {
           expand: true,
           dot: true,
           cwd: 'bower_components/bootstrap/dist',
-          src: 'fonts/*',
-          dest: '<%= config.dist %>'
+          src: ['fonts/*','js/*','css/*'],
+          dest: '<%= config.dist %>/bower_components/bootstrap/dist'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/jquery/dist',
+          src: '*.js',
+          dest: '<%= config.dist %>/bower_components/jquery/dist'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/jquery-validation/dist',
+          src: '*.js',
+          dest: '<%= config.dist %>/bower_components/jquery-validation/dist'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/jquery.complexify.js',
+          src: 'jquery.complexify.js',
+          dest: '<%= config.dist %>/bower_components/jquery.complexify.js'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/datatables/media',
+          src: ['images/*','js/*','css/*'],
+          dest: '<%= config.dist %>/bower_components/datatables/media'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/modal-js/dist',
+          src: 'modal.js',
+          dest: '<%= config.dist %>/bower_components/modal-js/dist'
+        }, {
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/growl',
+          src: ['javascripts/jquery.growl.js','stylesheets/jquery.growl.css'],
+          dest: '<%= config.dist %>/bower_components/growl'
         }]
       },
       styles: {

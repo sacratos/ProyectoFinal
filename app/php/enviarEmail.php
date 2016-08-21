@@ -6,10 +6,9 @@ session_start();
 
 	/*var_dump($_POST);//muestra en pantalla los datos que se estan enviando (solo para debugging)*/
 	//Recogemos las variables desde el formulario
-	$nombre= $_POST["nombre"];
+	
 	$email= $_POST["email"];
-	$comentario= $_POST["comentario"];
-	$captcha=sha1($_POST["captcha"]);
+	echo $email;
 /*	$cookie_captcha= $_COOKIE["cookie"];*/
 
 		//Validacion de Campos (no vacios y campos correctos)

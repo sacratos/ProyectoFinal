@@ -1,23 +1,33 @@
 <?php
+ /* See http://datatables.net/usage/server-side for full details on the server-*/
 header('Access-Control-Allow-Origin: *');
+include("mysql.php");
 /*
- * DataTables example server-side processing script.
- *
- * Please note that this script is intentionally extremely simply to show how
- * server-side processing can be implemented, and probably shouldn't be used as
- * the basis for a large complex system. It is suitable for simple use cases as
- * for learning.
- *
- * See http://datatables.net/usage/server-side for full details on the server-
- * side processing requirements of DataTables.
- *
- * @license MIT - http://datatables.net/license_mit
+ * Local functions
  */
- 
+function fatal_error($sErrorMessage = '') {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error');
+    die($sErrorMessage);
+}
+/*
+ * MySQL connection
+ */
+if (!$gaSql['link'] = mysql_pconnect($gaSql['server'], $gaSql['user'], $gaSql['password'])) {
+    fatal_error('Could not open connection to server');
+}
+if (!mysql_select_db($gaSql['db'], $gaSql['link'])) {
+    fatal_error('Could not select database ');
+}
+mysql_query('SET names utf8');
+
+$idusuario=$_POST['idusuario'];
+echo $idusuario;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Easy set variables
  */
- 
+ $sql1='SELECT idmaterial,nombre_material,porcentaje_absorcion,superficie FROM materiales,usuarios,salas WHERE usuarios.idusuario = '$idusuario'';
+
+
 // DB table to use
 $table = 'materiales';
  
@@ -29,7 +39,7 @@ $primaryKey = 'idmaterial';
 // parameter represents the DataTables column identifier. In this case simple
 // indexes
 $columns = array(
-    array( 'db' => 'id_doctor', 'dt' => 'idDoctor' ),
+    array( 'db' => 'idmaterial', 'dt' => 'idMaterial' ),
     array( 'db' => 'nombrematerial',  'dt' => 'nombrematerial' ),
     array( 'db' => 'porcentaje_absorcion',   'dt' => 'porcentaje_absorcion' ),
     array( 'db' => 'superficie',     'dt' => 'superficie' )

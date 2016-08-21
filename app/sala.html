@@ -30,9 +30,10 @@
                     <li><a href="salas.html">Dashboard</a></li>
                     <li><a href="#" title="Header" data-toggle="popover" data-placement="bottom" data-content="Content">Ayuda</a></li>
                     <li style="visibility:hidden;"><a>AQUI</a></li>
-                    <li style="visibility:hidden;"><a></a></li>
+                    <li style="visibility:hidden;">
+                        <a></a>
+                    </li>
                 </ul>
-                
             </div>
         </div>
     </nav>
@@ -44,7 +45,6 @@
                     <li><a href="salas.html">Lista de salas</a></li>
                     <li><a href="#">Export</a></li>
                 </ul>
-                
                 <ul class="nav nav-sidebar">
                     <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
@@ -54,61 +54,66 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="thumbnail3">
                     <div class="row placeholders">
-                        <form class="form-horizontal" id="form1" method="get" novalidate>
-                            <h2 class="text-muted">Crear Nueva Sala</h2>
-                            <div class="col-sm-7">
+                        <form class="form-horizontal" id="form1" action="guardarDatos" method="post" novalidate>
+                            <div class="col-sm-12">
+                                <h2 class="text-muted">Crear Nueva Sala</h2>
                                 <div class="form-group">
                                     <label for="nombresala" class="col-sm-4 control-label">Nombre de la sala:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" id="nombresala" name="nombresala" placeholder="Introduce un nombre">
+                                        <input type="text" class="form-control input-md" id="nombresala" name="nombresala" placeholder="Introduce un nombre">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="apellidos" class="col-sm-4 control-label">Descripción:</label>
                                     <div class="col-sm-6">
-                                        <input type="textarea" class="form-control" id="descripcion" name="descripcion" placeholder="Introduce una pequeña descripción de la sala">
+                                        <input type="textarea" class="form-control input-md" id="descripcion" name="descripcion" placeholder="Introduce una pequeña descripción de la sala">
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-sm-12">
+                                <button class="btn btn-lg btn-info pull-left marggin" type="submit"><i>Guardar Datos</i></button>
+                            </div>
                         </form>
-                        <div class="col-sm-5">
+                        <div class="col-sm-12" style="margin-top:50px;">
                             <form action="php/upload.php" method="post" enctype="multipart/form-data">
                                 Select image to upload:
-                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input name="file-input" id="file-input" type="file" />
+                                <br />
+                                <img id="imgSalida" width="50%" height="50%" src="" />
                                 <input type="submit" value="Upload Image" name="submit">
                             </form>
                         </div>
                     </div>
                 </div>
-                <form id="form2" method="get" accept-charset="utf-8" novalidate>
+                <form id="form2" action="php/guardarDimensiones.php" method="post" accept-charset="utf-8" novalidate>
                     <fieldset class="page-header">
-                        <h2 class="center-block">Detalles de la Sala:</h2></fieldset>
+                        <h2 class="center-block" style="color:white;">Detalles de la Sala:</h2></fieldset>
                     <div class="thumbnail3">
                         <div class="row placeholders">
                             <h2 class="text-muted">Dimensiones</h2>
                             <p><strong>· Escribe las dimensiones de tu nueva sala.</strong></p>
-                            <div class="col-sm-8 col-xs-12">
+                            <div class="col-sm-8">
                                 <div class="col-sm-4 placeholder">
-                                    <label class="control-label col-sm-4" for="Largo">Largo</label>
+                                    <label class="control-label col-sm-4" for="largo">Largo</label>
                                     <div class="col-sm-8">
                                         <input id="largo" name="largo" placeholder="L" class="form-control input-md" type="number">m
                                     </div>
                                 </div>
                                 <div class="col-sm-4 placeholder">
-                                    <label class="control-label col-sm-4" for="contrasenaEntrar">Ancho</label>
+                                    <label class="control-label col-sm-4" for="ancho">Ancho</label>
                                     <div class="col-sm-8">
                                         <input id="ancho" name="ancho" placeholder="A" class="form-control input-md" type="number">m
                                     </div>
                                 </div>
                                 <div class="col-sm-4 placeholder">
-                                    <label class="control-label col-sm-4" for="contrasenaEntrar">Alto</label>
+                                    <label class="control-label col-sm-4" for="alto">Alto</label>
                                     <div class="col-sm-8">
                                         <input id="alto" name="alto" placeholder="H" class="form-control input-md" type="number">m
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 placeholder">
-                                        <label class="control-label col-sm-2" for="contrasenaEntrar">Volumen</label>
+                                        <label class="control-label col-sm-2" for="volumen">Volumen</label>
                                         <div class="col-sm-9">
                                             <input id="volumen" name="volumen" placeholder="V" class="form-control input-md" type="number">
                                         </div>
@@ -116,15 +121,18 @@
                                     </div>
                                 </div>
                             </div>
-                        
-                            <div class="col-sm-4 col-xs-0">
+                            <div class="col-sm-4">
                                 <img class="center-block img-responsive menos-margin mucho-menos-margin" src="../images/cubo.png" alt="tr">
                             </div>
-
+                            <div class="col-sm-12">
+                                <button class="btn btn-lg btn-info pull-left marggin" type="submit"><i>Guardar Dimensiones</i></button>
+                            </div>
                         </div>
                     </div>
+                </form>
+                <form id="form3" method="get" accept-charset="utf-8" novalidate>
                     <div id="tabla" class="thumbnail3 row placeholder">
-                    <h1 class="text-muted center-block">Materiales</h1>
+                        <h1 class="text-muted center-block">Materiales</h1>
                         <div class="col-md-12">
                             <table id="miTabla" class="table stripe">
                                 <!--cabecera de la pagina, titulo e icono-->
@@ -280,8 +288,6 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="bower_components/jquery-validation/dist/additional-methods.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/jquery.transit/jquery.transit.js"></script>
     <script src="bower_components/modal-js/dist/modal.js"></script>
@@ -292,8 +298,8 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/jquery.dataTables.js"></script>
     <script src="scripts/dataTables.bootstrap.js"></script>
-    <script src="scripts/tabla-materiales.js"></script>
     <script src="scripts/sala.js"></script>
+    <script src="scripts/tabla-materiales.js"></script>
     <!-- endbuild -->
 </body>
 
