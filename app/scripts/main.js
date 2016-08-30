@@ -24,10 +24,10 @@ $(document).ready(function() {
             },
 
         },
-        submitHandler: function() {
-            console.log('test');
-            emailEntrar = $('#emailEntrar').val();
-            contrasenaEntrar = $('#contrasenaEntrar').val();
+        submitHandler: function(form) {
+            console.log('test 1');
+            var emailEntrar = $('#emailEntrar').val();
+            var contrasenaEntrar = $('#contrasenaEntrar').val();
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
@@ -37,27 +37,14 @@ $(document).ready(function() {
                     contrasenaEntrar: contrasena,
                 },
                 success: function(data) {
-                    console.log('test');
-                    if (data[0].estado == 0) {
-                        $.growl({
-                            icon: "glyphicon glyphicon-ok",
-                            message: "INSERCCIÓN CORRECTA"
-
-                        }, {
-                            type: "success"
-                        });
-                    } else {
-
-                        $.growl({
-
-                            icon: "glyphicon glyphicon-remove",
-                            message: "ERROR: fallo al hacer el doctor"
-
-                        }, {
-                            type: "danger"
-                        });
-                    }
-
+                    $('#result').html(data.status + ':' + data.message);
+                    $("#result").addClass('msg_notice');
+                    $("#result").fadeIn(1500);
+                },
+                error: function() {
+                    $("#result").html('There was an error updating the settings');
+                    $("#result").addClass('msg_error');
+                    $("#result").fadeIn(1500);
                 },
                 complete: {}
             });

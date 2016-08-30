@@ -2,31 +2,7 @@
 
 $(document).ready(function() {
 
-    $('[data-toggle="popover"]').popover();
-
-    //Cargar imagen de Sala:
-    $(function() {
-        $('#file-input').change(function(e) {
-            addImage(e);
-        });
-
-        function addImage(e) {
-            var file = e.target.files[0],
-                imageType = /image.*/;
-
-            if (!file.type.match(imageType))
-                return;
-
-            var reader = new FileReader();
-            reader.onload = fileOnload;
-            reader.readAsDataURL(file);
-        }
-
-        function fileOnload(e) {
-            var result = e.target.result;
-            $('#imgSalida').attr("src", result);
-        }
-    });
+    
 
     $('#form1').validate({
         rules: {
@@ -58,29 +34,29 @@ $(document).ready(function() {
         rules: {
             alto: {
                 required: true,
-                number: true
+                range: [0.00001, 1000000.01]
             },
             largo: {
                 required: true,
-                number: true
+                range: [0.00001, 1000000.01]
             },
             ancho: {
                 required: true,
-                number: true
+                range: [0.00001, 1000000.01]
             },
         },
         messages: {
             alto: {
                 required: "Este campo es requerido",
-                number: "Solo dígitos"
+                range: "Solo números positivos."
             },
             largo: {
                 required: "Este campo es requerido",
-                number: "Solo dígitos"
+                range: "Solo números positivos."
             },
             ancho: {
                 required: "Este campo es requerido",
-                number: "Solo dígitos"
+                range: "Solo números positivos."
             },
 
         },
@@ -88,19 +64,49 @@ $(document).ready(function() {
             var alto = $('#alto').val();
             var largo = $('#largo').val();
             var ancho = $('#ancho').val();
+            var volumen = $('#volumen').val();
             console.log('Alto: ' + alto + '; Largo: ' + alto + '; Ancho: ' + ancho);
+            console.log('Volumen: '+ volumen);
+            $.ajax({
+                url: '/path/to/file',
+                type: 'default GET (Other values: POST)',
+                dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+                data: {param1: 'value1'},
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+            
         },
 
     });
 
-    var volumen = $('#volumen').val();
-    volumen = 2;
-    $('#largo').on('focusout', function() {
-        if ($('#largo').val()!="") {
-            volumen += $('#largo').val();
+    $("#largo")
+        .keyup(function() {
+            var value = $('#largo').val() * $('#ancho').val() * $('#alto').val();
+            $('#volumen').val(value);
+        })
+        .keyup();
+    $("#ancho")
+        .keyup(function() {
+            var value = $('#largo').val() * $('#ancho').val() * $('#alto').val();
+            $('#volumen').val(value);
+        })
+        .keyup();
+    $("#alto")
+        .keyup(function() {
+            var value = $('#largo').val() * $('#ancho').val() * $('#alto').val();
+            $('#volumen').val(value);
+        })
+        .keyup();
 
-        }
-    });
+
 
 
 });

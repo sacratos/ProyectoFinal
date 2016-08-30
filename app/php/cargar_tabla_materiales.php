@@ -1,7 +1,8 @@
 <?php
  /* See http://datatables.net/usage/server-side for full details on the server-*/
 header('Access-Control-Allow-Origin: *');
-include("mysql.php");
+include_once 'php/mysql.php';
+include_once 'php/functions.php';
 /*
  * Local functions
  */
@@ -20,12 +21,12 @@ if (!mysql_select_db($gaSql['db'], $gaSql['link'])) {
 }
 mysql_query('SET names utf8');
 
-$idusuario=$_POST['idusuario'];
+$idusuario=$_REQUEST['idusuario'];
 echo $idusuario;
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Easy set variables
  */
- $sql1='SELECT idmaterial,nombre_material,porcentaje_absorcion,superficie FROM materiales,usuarios,salas WHERE usuarios.idusuario = '$idusuario'';
+ $sql1='SELECT idmaterial,nombre_material,porcentaje_absorcion,superficie FROM materiales,usuarios,salas'; // WHERE usuarios.idusuario = '$idusuario'';
 
 
 // DB table to use

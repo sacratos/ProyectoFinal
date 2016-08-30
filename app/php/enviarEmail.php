@@ -1,4 +1,6 @@
 <?php
+include_once 'php/mysql.php';
+include_once 'php/functions.php';
 //Iniciamos Sesion
 session_start();
 	//Comprobamos si el formulario reamente esta trabajando via POST
@@ -33,38 +35,39 @@ session_start();
 	}//if validaciones
 	
 	function enviaEmail(){
-	//Recogemos las Variables
-	$nombre= $_POST['nombre'];
-	$email= $_POST['email'];
-	$comentario= $_POST['comentario'];
+			//Recogemos las Variables
+			$nombre= $_POST['nombre'];
+			$email= $_POST['email'];
+			$comentario= $_POST['comentario'];
+			
+			//Definimos Email de Destino
+			$destinatario= $_POST['email'];
+			echo $destinatario;
+			
+			//Cabeceras para Evitar que el Correo sea Considerado Spam
+			$headers = "From: $nombre <$email>\r\n";
+			$headers .= "X-Mailer: PHP5\n";
+			$headers .= 'MIME-Version: 1.0'; 
+			$header .= 'Content-type: text/html; charset=iso-8859-1';
+			
+			//Preparacion del Email
+			$asunto= "Consulta desde la pagina";
+			$cuerpo="Nombre:".$nombre."</br>";
+			$cuerpo .="Correo Electronico:".$email."</br>";
+			$cuerpo .="Comentario o Consulta:".$comentario."</br>";
+			
+		//Validacion de Campos Vacios Antes de Enviar
+		
+		//Envio del Mensaje
+		if($nombre != '' &&$email != '' &&$comentario != '' ){
+			//si pasa la validacion de que no falte ningun campo, envia el email
+			mail($destinatario,$asunto,$cuerpo,$headers);
+		}else
+		{
+			echo "<script>alert 'fallo, faltan campos' </script>";	
+		}
 	
-	//Definimos Email de Destino
-	$destinatario= "algo@algo.com";
-	
-	//Cabeceras para Evitar que el Correo sea Considerado Spam
-	$headers = "From: $nombre <$email>\r\n";
-	$headers .= "X-Mailer: PHP5\n";
-	$headers .= 'MIME-Version: 1.0'; 
-	$header .= 'Content-type: text/html; charset=iso-8859-1';
-	
-	//Preparacion del Email
-	$asunto= "Consulta desde la pagina";
-	$cuerpo="Nombre:".$nombre."</br>";
-	$cuerpo .="Correo Electronico:".$email."</br>";
-	$cuerpo .="Comentario o Consulta:".$comentario."</br>";
-	
-	//Validacion de Campos Vacios Antes de Enviar
-	
-	//Envio del Mensaje
-	if($nombre != '' &&$email != '' &&$comentario != '' ){
-		//si pasa la validacion de que no falte ningun campo, envia el email
-		mail($destinatario,$asunto,$cuerpo,$headers);
-	}else
-	{
-		echo "<script>alert 'fallo, faltan campos' </script>";	
-	}
-	
-}//Fin Funcion enviaEmail
+	}//Fin Funcion enviaEmail
 	
 	
 	
