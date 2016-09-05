@@ -2,12 +2,14 @@
 
 /* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
 // ini_set('display_errors', '1');
-/* Definimos los parámetros de conexión con la bbdd: */
+/* Definimos los parámetros de conexión con la bbdd: 
 include_once 'mysql.php';
 include_once 'functions.php';
-
+*/
 //header('Location: ../salas.html');
-/*
+include ("mysql.php");
+session_start();
+
 $dbinfo = "mysql:dbname=DBProyectoFinal;host=localhost";
 $user = "root";
 $pass = "swesaswesa7,.";
@@ -23,13 +25,13 @@ try {
     echo "La conexi&oacute;n ha fallado: " . $e->getMessage();
 }
 
-*/
+
 /* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
 //$_REQUEST['email'] = "pepito@hotmail.com";
 if (isset($_REQUEST['emailEntrar'])) {
     /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
     //echo $_REQUEST['email'];
-    $email = $_REQUEST['emailEntrar'];
+   /* $email = $_REQUEST['emailEntrar'];
     $sql = $db->prepare("SELECT * FROM usuarios WHERE email=?");
     $sql->bindParam(1, $email, PDO::PARAM_STR);
     
@@ -42,16 +44,47 @@ if (isset($_REQUEST['emailEntrar'])) {
      * aplicaciones portables.
      */
 
-    $valid = 'true';
+   /* $valid = 'true';
     if ($sql->rowCount() > 0) {
-        echo "El usuario ya existe";
+
+        //echo "El usuario ya existe";
         $valid= 'false';
-    } else {
+        $contrasena= $_REQUEST['contrasenaEntrar'];
+        
+
+
+
+        /*
+        header ('Location: ../salas.html');*/
+   /* } else {
         echo "El usuario no existe";
        $valid='true';
+    }*/
+    $email=$_REQUEST['emailEntrar'];
+    $password=$_REQUEST['contrasenaEntrar'];
+    
+    $sql = "SELECT idusuario FROM usuarios WHERE email='$email' AND contrasena='$password'";
+    $result= mysqli_query($mysqli,$sql);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $active = $row['active'];
+
+    $count=mysqli_num_rows($result);
+
+    //si existen usuario y contraseña, Count = 1;
+
+    if ($count==1) {
+        //ESTO ES QUE EL USUARIO Y LA CONTRASEÑA SON CORRECTOS.
+        
+        $_SESSION['email'] = $email;
+        echo "2";
+        header("location: ../salas2.html");
+    } else {
+        echo "MAL Hecho";
     }
+    
+
 }
 $sql=null;
 $db = null;
-echo $valid;
+//echo $valid;
 ?>

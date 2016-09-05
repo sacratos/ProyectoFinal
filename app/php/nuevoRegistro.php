@@ -106,6 +106,6 @@ if (isset($_REQUEST['email'])) {
 $sql=null;
 $db = null;
 echo $valid;
-
+header(location: ../salas.html)
 
 ?>

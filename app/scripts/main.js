@@ -25,7 +25,7 @@ $(document).ready(function() {
 
         },
         submitHandler: function(form) {
-            console.log('test 1');
+
             var emailEntrar = $('#emailEntrar').val();
             var contrasenaEntrar = $('#contrasenaEntrar').val();
             $.ajax({

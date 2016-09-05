@@ -23,8 +23,6 @@
 /* Informacion de la base de datos */
 include("mysql.php");
 session_start();
-
-    
 }
     ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -74,9 +72,12 @@ session_start();
                         ?>
                 </div>-->
                 <div class="thumbnail4 row placeholders">
+                    <?php echo $_SESSION['email']; ?>
+                    <form action="php/cargarSalas.php" method="get" accept-charset="utf-8">
+                        <button type="submit">Cargar mis salas</button>
+                    </form>
                     <?php 
-                    echo "hola";
-                    function CargarSalas(){
+                    
                         echo "hola";
                         $sql = "SELECT * FROM salas,usuarios WHERE email='$_SESSION['email']'";
                         $result= mysqli_query($mysqli,$sql);
@@ -85,29 +86,9 @@ session_start();
 
                         $count=mysqli_num_rows($result);
                         echo "$count";
-                    }
-                    CargarSalas();
+                    
                     ?>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="images/wave1.png" style="background:grey;" class="img-responsive mimagen" alt="Generic placeholder thumbnail"></a>
-                        <h4>NombreSala</h4>
-                        <span class="text-muted">Descripcion</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@
         </div>
         <!--FORMULARIO ENTRADA-->
         <div class="col-lg-4 col-sm-10 col-md-10 thumbnail">
-            <form id="formularioEntrada" accept-charset="UTF-8" action="php/validarEmail.php" class="input-list style-4 clearfix" method="post" novalidate>
+            <form id="formularioEntrada" accept-charset="UTF-8" action="php/validarEmail.php" class="input-list style-4 clearfix form-horizontal" method="post" novalidate>
                 <h1 class="text-muted center-block">Entrar</h1><img class="hand1" src="../images/hand-ok.png"><img class="wave2" src="../images/wave2.png">
                 <div id="ok"></div>
                 <!-- Text input EMAIL-->
@@ -50,7 +50,6 @@
                     <input type="hidden" name="fromHome" value="1" />
                     <br>
                     <button name="entrar" type="submit" class="btn-lg btn-success center-block">Entrar</button>
-
                     <br>
                     <p id="result" class="error"></p>
                 </div>
@@ -61,7 +60,7 @@
         <!--FORMULARIO REGISTRO-->
         <div class="thumbnail col-lg-5 col-md-10 col-sm-10">
             <div class="caja-modal">
-                <form id="formularioRegistro" accept-charset="UTF-8" action="php/nuevoRegistro.php" class="input-list style-4 clearfix" method="post">
+                <form id="formularioRegistro" accept-charset="UTF-8" action="php/nuevoRegistro.php" class="input-list style-4 clearfix form-horizontal" method="post">
                     <h1 class="text-muted center-block">Registrate! <small class="text-muted"> It's free</small></h1><img class="cara1" src="../images/cara1.png"><img class="wave3" src="../images/wave3.png">
                     <div class="col-sm-12">
                         <label class="control-label col-sm-4" for="nombre">Nombre<span>*</span></label>
@@ -182,9 +181,7 @@
         </ol>
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-
             <div class="item active">
-
                 <div class="col-md-1">
                 </div>
                 <div class="col-md-6 col-xs-7">
@@ -199,7 +196,7 @@
             <div class="item">
                 <div class="col-md-5 col-xs-4">
                     <img class="featurette-image2 img-responsive center-block" alt="500x500" src="../images/sonido/constanteAcustica.jpg" data-holder-rendered="true">
-                </div> 
+                </div>
                 <div class="col-md-6 col-xs-7">
                     <h1 class="featurette-heading">Constante Acústica del Local.</h1>
                     <br>
@@ -220,9 +217,7 @@
                     <img class="featurette-image img-responsive center-block" alt="500x500" src="../images/sonido/escaleras3.jpg" data-holder-rendered="true">
                 </div>
             </div>
-            
             <div class="item">
-                
                 <div class="col-md-5 col-xs-4">
                     <img class="featurette-image2 img-responsive center-block" alt="500x500" src="../images/sonido/disminucionEspacial2.jpg" data-holder-rendered="true">
                 </div>
@@ -234,7 +229,6 @@
                 <div class="col-md-1 col-xs-1">
                 </div>
             </div>
-            
         </div>
         <!-- Controls -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -275,9 +269,9 @@
                             <br>
                             <div class="textwidget">
                                 <div>
-                                    <a href="#"><img name="sprite" src="../icons/facebook.png"></a>
-                                    <a style href="#"><img name="sprite" src="../icons/linkedin.png"></a>
-                                    <a href="#"><img name="sprite" src="../icons/twitter.png"></a>
+                                    <a href="#"><img name="sprite" src="icons/facebook.png"></a>
+                                    <a style href="#"><img name="sprite" src="icons/linkedin.png"></a>
+                                    <a href="#"><img name="sprite" src="icons/twitter.png"></a>
                                 </div>
                             </div>
                         </section>
@@ -291,7 +285,7 @@
             </div>
         </section>
     </div>
-    </div>
+    
     <div class="bottom-corner-btns js-bottom-corner-btns">
         <a href="#top-of-page" class="mk-go-top  js-smooth-scroll js-bottom-corner-btn js-bottom-corner-btn--back">
             <i class="mk-icon-chevron-up"></i>

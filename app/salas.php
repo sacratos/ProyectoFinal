@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<?php 
+//CARGAR SALAS DEL USUARIO
+
+/* Informacion de la base de datos */
+include("mysql.php");
+session_start();
+?>
 <html lang="en">
 
 <head>
@@ -17,16 +24,6 @@
 </head>
 
 <body>
-    <?php 
-    //CARGAR SALAS DEL USUARIO
-
-/* Informacion de la base de datos */
-include("mysql.php");
-session_start();
-
-    
-}
-    ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -42,6 +39,7 @@ session_start();
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="perfil.html">Mi Perfil</a></li>
                     <li><a href="#">Dashboard</a></li>
+                    
                     <li><a href="#">Help</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
@@ -54,9 +52,10 @@ session_start();
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar-nav well">
                 <ul class="nav nav-sidebar">
-                    <li><a href="sala.html">Crear nueva sala <span class="sr-only">(current)</span></a></li>
+                    <li><a href="sala.html">Crear nueva sala <span class="sr-only">(current)</span></a></li> 
                     <li class="active"><a href="#">Lista de salas</a></li>
                 </ul>
+                
                 <!--<ul class="nav nav-sidebar">
                     <li><a href="">Nav item again</a></li>
                     <li><a href="">One more nav</a></li>
@@ -74,20 +73,6 @@ session_start();
                         ?>
                 </div>-->
                 <div class="thumbnail4 row placeholders">
-                    <?php 
-                    echo "hola";
-                    function CargarSalas(){
-                        echo "hola";
-                        $sql = "SELECT * FROM salas,usuarios WHERE email='$_SESSION['email']'";
-                        $result= mysqli_query($mysqli,$sql);
-                        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                        $active = $row['active'];
-
-                        $count=mysqli_num_rows($result);
-                        echo "$count";
-                    }
-                    CargarSalas();
-                    ?>
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <a href="#"><img src="images/wave1.png" style="background:grey;" class="img-responsive mimagen" alt="Generic placeholder thumbnail"></a>
                         <h4>NombreSala</h4>

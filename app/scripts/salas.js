@@ -6,5 +6,14 @@ $(document).ready(function() {
         })
         .on('focusout', function() {
             $("#search").css({ width: '200px', opacity: '0.7' });
+        })
+        .on('keypress', function(e) {
+
+            if (e.which === 13) {
+                console.log('test');
+
+            }
+
+
         });
 });

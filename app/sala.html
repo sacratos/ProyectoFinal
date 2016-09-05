@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/salas.css">
     <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
-    <title>Dashboard</title>
+    <title>Sala - SoudMov</title>
+    <?php echo "<title>$nombresala</title>"?>
 </head>
 
 <body>
@@ -45,11 +46,7 @@
                     <li><a href="salas.html">Lista de salas</a></li>
                     <li><a href="#">Export</a></li>
                 </ul>
-                <ul class="nav nav-sidebar">
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                </ul>
+                
             </div>
             <div class="col-sm-9 col-md-10 main">
                 <div class="thumbnail3">
@@ -161,13 +158,16 @@
                                     <th>Borrar</th>
                                 </tfoot>
                             </table>
-                            <h5 class="center-block"><strong>Absorción total de la sala: </strong></h5>
+                            <h5 class="center-block"><strong>Área de Absorcion Equivalente: </strong></h5>
                             <div class="col-sm-5">
                             </div>
                             <div class="col-sm-2">
-                                <input disabled="true" type="text" name="">
+                                <input disabled="true" type="text" id="areaAbs" name="areaAbs">
                             </div>
                             <div class="col-sm-5">
+                            </div>
+                            <div class="col-sm-12">
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -269,13 +269,59 @@
                         </div>
                     </div>
                     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                        <button class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
+                        <button id="guardar" class="btn btn-lg btn-success pull-right" type="submit"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Guardar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+        <section></section>
+        <section role="contentinfo" itemscope="itemscope">
+            <div>
+                <div>
+                    <div>
+                        <section id="text-4">
+                            <div class="textwidget">
+                                <div style="line-height: 5px;">
+                                    <small>
+                                        <span style="color:rgba(256,256,256,0.7);">
+                                    Un diseño de <strong>Mr Probl3ms</strong>
+                                        </span>
+                                    </small>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="text-1" class="widget widget_text">
+                            <br>
+                            <div class="textwidget"><img src="../images/coolman.png"></div>
+                        </section>
+                    </div>
+                    <div class="mk-col-1-3">
+                        <section id="text-3">
+                            <div>Otros sitios</div>
+                            <br>
+                            <div class="textwidget">
+                                <div>
+                                    <a href="#"><img name="sprite" src="../icons/facebook.png"></a>
+                                    <a style href="#"><img name="sprite" src="../icons/linkedin.png"></a>
+                                    <a href="#"><img name="sprite" src="../icons/twitter.png"></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="mk-col-1-3">
+                        <section id="text-5">
+                            <div class="textwidget"><a class="phonefooter" href="#">900 230 198<br><span>¡Teléfono gratuito!</a></span></div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
+
     <!--Los scripts se cargan siempre después de los css, nunca antes!-->
     <!-- Bootstrap core JavaScript
     ================================================== -->

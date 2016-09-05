@@ -1,7 +1,11 @@
 'use strict';
 
 $(document).ready(function() {
-
+    
+    function guardarDimensiones (par1,par2,par3,par4) {
+        var datos=[par1,par2,par3,par4];
+        console.log(datos);
+    }
     
 
     $('#form1').validate({
@@ -67,11 +71,12 @@ $(document).ready(function() {
             var volumen = $('#volumen').val();
             console.log('Alto: ' + alto + '; Largo: ' + alto + '; Ancho: ' + ancho);
             console.log('Volumen: '+ volumen);
-            $.ajax({
-                url: '/path/to/file',
+            guardarDatos(largo,alto,ancho,volumen);
+            /*$.ajax({
+                url: '../php/guardarDimensiones.php',
                 type: 'default GET (Other values: POST)',
                 dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-                data: {param1: 'value1'},
+                data: {alto: 'value1'},
             })
             .done(function() {
                 console.log("success");
@@ -81,7 +86,7 @@ $(document).ready(function() {
             })
             .always(function() {
                 console.log("complete");
-            });
+            });*/
             
         },
 
@@ -106,7 +111,14 @@ $(document).ready(function() {
         })
         .keyup();
 
+    
+    var areaAbsorcion = $('#areaAbs').val();
 
 
+    $('#guardar').on('click', function() {
+        
+
+
+    });
 
 });

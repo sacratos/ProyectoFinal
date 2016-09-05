@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/salas.css">
     <link href='https://fonts.googleapis.com/css?family=Fugaz+One|Lobster' rel='stylesheet' type='text/css'>
-    <title>Dashboard - SoudMov</title>
+    <title>Perfil - SoudMov</title>
     <!--Los scripts se cargan siempre después de los css, nunca antes!-->
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
@@ -17,16 +17,6 @@
 </head>
 
 <body>
-    <?php 
-    //CARGAR SALAS DEL USUARIO
-
-/* Informacion de la base de datos */
-include("mysql.php");
-session_start();
-
-    
-}
-    ?>
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -40,8 +30,9 @@ session_start();
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="perfil.html">Mi Perfil</a></li>
+                    <li><a href="#">Mi Perfil</a></li>
                     <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
@@ -57,60 +48,102 @@ session_start();
                     <li><a href="sala.html">Crear nueva sala <span class="sr-only">(current)</span></a></li>
                     <li class="active"><a href="#">Lista de salas</a></li>
                 </ul>
-                <!--<ul class="nav nav-sidebar">
-                    <li><a href="">Nav item again</a></li>
-                    <li><a href="">One more nav</a></li>
-                    <li><a href="">Another nav item</a></li>
-                </ul>-->
             </div>
             <div class="col-sm-9 col-md-10 main">
-                <h1 class="page-header">Mis Salas</h1>
-                <!--<div class="thumbnail4">
+                <h1 class="page-header">Mi Perfil</h1>
+                <!--
+                <div class="thumbnail4">
                     <button class="center-block btn btn-lg btn-info" type="submit" name="ver"></button>
                     <?php 
                     /*if isset($_POST('ver')){
                         echo "hola";
                     }*/
                         ?>
-                </div>-->
-                <div class="thumbnail4 row placeholders">
-                    <?php 
-                    echo "hola";
-                    function CargarSalas(){
-                        echo "hola";
-                        $sql = "SELECT * FROM salas,usuarios WHERE email='$_SESSION['email']'";
-                        $result= mysqli_query($mysqli,$sql);
-                        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                        $active = $row['active'];
-
-                        $count=mysqli_num_rows($result);
-                        echo "$count";
-                    }
-                    CargarSalas();
-                    ?>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="images/wave1.png" style="background:grey;" class="img-responsive mimagen" alt="Generic placeholder thumbnail"></a>
-                        <h4>NombreSala</h4>
-                        <span class="text-muted">Descripcion</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="img-responsive mimagen" style="background:grey;" alt="Generic placeholder thumbnail"></a>
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
                 </div>
+                -->
+                <div class="thumbnail5">
+                    <form class="form-horizontal" action="perfil_submit" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+                        <div class="center-block form-group">
+                            <h3 class="text-muted">Foto de Perfil</h3>
+                            <div class="row">
+                                <div class="col-sm-1">
+                                </div>
+                                <div class="col-sm-2">
+                                    <img src="images/coolman.png" class="img-responsive mimagen2" alt="Generic placeholder thumbnail">
+                                </div>
+                                <div class="col-sm-6">
+                                    <br>
+                                    <input type="file" class="mimagen2 img-responsive center-block">
+                                </div>
+                                <div class="col-sm-3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-block">
+                            <!-- Text input NOMBRE-->
+                            <div class="form-group">
+                                <h4 class="text-muted"><label for="nombre" class="col-sm-3 control-label">Nombre:</label></h4>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>">
+                                </div>
+                                 <div class="col-sm-1">
+                                </div>
+                            </div>
+                            <!-- Text input APELLIDOS-->
+                            <div class="form-group">
+                                <h4 class="text-muted"><label for="apellidos" class="col-sm-3 control-label">Apellidos:</label></h4>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Introduce tus apellidos">
+                                </div>
+                                 <div class="col-sm-1">
+                                </div>
+                            </div>
+                            <!-- Text input EMAIL-->
+                            <div class="form-group">
+                                <h4 class="text-muted"><label for="email" class="col-sm-3 control-label">Email:</label></h4>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                </div>
+                                 <div class="col-sm-1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="center-block">
+                            <fieldset>
+                                <legend style="color:white;">Cambiar la contraseña:</legend>
+                            </fieldset>
+                            <!-- Text input CONTRASEÑA-->
+                            <div class="form-group">
+                                <h4 class="text-muted"><label for="contra1" class="col-sm-3 control-label">Contraseña:</label></h4>
+                                <div class="col-sm-8">
+                                    <input type="pàssword" class="form-control" id="contra1" name="contra1" placeholder="Contraseña Nueva">
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                            </div>
+                            <!-- Text input REPETIR CONTRASEÑA-->
+                            <div class="form-group">
+                                <h4 class="text-muted"><label for="contra2" class="col-sm-3 control-label">Repetir Contraseña:</label></h4>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" id="contra2" name="contra2" placeholder="Repite la contraseña">
+                                </div>
+                                <div class="col-sm-1">
+                                </div>
+                            </div>
+                        </div>
+                        <!--BOTON ENVIAR >-->
+                        <div class="form-group">
+                            <br>
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="enviar" name="enviar" class="btn btn-primary btn-lg">ENVIAR</button>
+                            </div>
+                        </div>
+                </div>
+                </form>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <!--FOOTER-->
     <div class="footer">

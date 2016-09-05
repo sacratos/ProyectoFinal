@@ -48,6 +48,7 @@ body {
     background: url("../images/fondo-inicio.png");
     /*#8C82C8;*/
 }
+
 .marggin{
 margin: 20px 20px 20px 20px;
 }
@@ -58,7 +59,7 @@ margin: 20px 20px 20px 20px;
     padding-left: 15px;
     margin-top: 0px;
 }
-.mimagen{
+.mimagen, .mimagen2{
     width: 140px; 
     height: 140px;
     transition: 1s;
@@ -66,6 +67,11 @@ margin: 20px 20px 20px 20px;
 .mimagen:hover{
     width: 170px;
     height: 170px;
+}
+.mimagen2:hover{
+    opacity: 0.8;
+    z-index: 10000;
+    background-image: url("../images/camara.jpg");
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -100,7 +106,6 @@ input[type="submit"] {
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    margin-top: 10px;
 }
 
 meter {
@@ -241,13 +246,23 @@ meter {
     /* For Safari 3.1 to 6.0 */
     transition: 0.5s;
 }
+.thumbnail5 {
+    margin-left: auto;
+    margin-top: 20px;
+    background: none;
+    color: white;
+    height: auto;
+    -webkit-transition: 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: 0.5s;
+}
 
 .thumbnail:hover {
     background: #9F5A81;
     color: black;
 }
 
-.thumbnail2:hover, .thumbnail4:hover {
+.thumbnail2:hover, .thumbnail4:hover, .thumbnail5:hover {
     background: #814981;
     color: black;
     box-shadow: 3px 3px 40px 10px;
